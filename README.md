@@ -11,6 +11,8 @@ Official production-grade corporate website for **Q COM Software Solutions**, bu
 - **Founder & Chief Strategist**: Sachin Rathore
 - **Chief Executive Officer (CEO)**: Roshani
 - **Managing Partner & Tech Lead**: Sahil Pathan
+- **Official Contact Phone / WhatsApp**: [+91 80802 71703](tel:+918080271703) / [+91 93719 60486](tel:+919371960486)
+- **Official WhatsApp Direct**: [https://wa.me/918080271703](https://wa.me/918080271703)
 - **Official Contact Email**: [qcomsoft@gmail.com](mailto:qcomsoft@gmail.com)
 - **Official Instagram**: [@qcomsoftware](https://instagram.com/qcomsoftware)
 

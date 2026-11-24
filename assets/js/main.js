@@ -460,6 +460,9 @@ function initContactForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.innerHTML : '<span>Send Project Inquiry</span><i class="fas fa-paper-plane text-xs"></i>';
+
     const name = document.getElementById('contact-name').value.trim();
     const email = document.getElementById('contact-email').value.trim();
     const phone = document.getElementById('contact-phone').value.trim();
@@ -472,6 +475,7 @@ function initContactForm() {
       return;
     }
 
+    // Prepare direct mailto link
     const emailSubject = encodeURIComponent(`Project Enquiry from ${name} - Q COM Software`);
     const emailBody = encodeURIComponent(
       `Hello Q COM Software Team (Sachin, Roshani, Sahil),\n\n` +
@@ -485,21 +489,65 @@ function initContactForm() {
     );
     const mailtoUrl = `mailto:qcomsoft@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
+    // Direct WhatsApp message to +91 80802 71703 (with +91 93719 60486 alternate)
     const waText = encodeURIComponent(
-      `Hello Q COM Software Solutions,\nMy name is ${name}.\nI am contacting you regarding: ${service}.\nEmail: ${email}\nBudget: ${budget}\nBrief: ${message}`
+      `Hello Q COM Software Solutions (Sachin, Roshani, Sahil),\n` +
+      `My name is: ${name}\n` +
+      `I need: ${service}\n` +
+      `Email: ${email}\n` +
+      `Phone: ${phone || 'Not provided'}\n` +
+      `Estimated Budget: ${budget}\n\n` +
+      `Project Brief:\n${message}`
     );
-    const waUrl = `https://wa.me/?text=${waText}`;
+    const waUrl = `https://wa.me/918080271703?text=${waText}`;
 
     if (mailtoBtn) mailtoBtn.href = mailtoUrl;
     if (whatsappBtn) whatsappBtn.href = waUrl;
 
-    if (successModal) {
-      successModal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+    // Show loading spinner on submit button
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin text-sm"></i> <span>Delivering to qcomsoft@gmail.com...</span>';
     }
 
-    showToast("Enquiry submitted! You can now send directly to qcomsoft@gmail.com or WhatsApp.");
-    form.reset();
+    // AUTOMATIC FORM SUBMISSION: Posts directly to qcomsoft@gmail.com via FormSubmit AJAX API
+    fetch("https://formsubmit.co/ajax/qcomsoft@gmail.com", {
+      method: "POST",
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        "Client Name": name,
+        "Email Address": email,
+        "Phone / WhatsApp": phone || 'Not provided',
+        "Service Selected": service,
+        "Budget Range": budget,
+        "Project Description": message,
+        _subject: `New Client Enquiry from ${name} (${service}) - Q COM`,
+        _template: "table",
+        _captcha: "false"
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      showToast("Enquiry sent automatically to qcomsoft@gmail.com!");
+    })
+    .catch(err => {
+      console.log("Direct delivery status:", err);
+      showToast("Enquiry prepared! You can also send via WhatsApp or Email.");
+    })
+    .finally(() => {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
+      if (successModal) {
+        successModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      form.reset();
+    });
   });
 
   if (successCloseBtn && successModal) {
