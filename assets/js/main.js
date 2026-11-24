@@ -1,12 +1,11 @@
 /**
- * Q COM Software Solutions - Professional Corporate Interactive Scripts
+ * Q COM Software Solutions - Multi-Page Interactive Core Scripts
  * Clean, Sharp High-Tech Corporate Theme
  * Sticky Navbar at Top on Scroll & Optimized for 320px+ Mobile Devices
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initStickyNavbar();
-  initScrollSpy();
   initCounters();
   initPortfolio();
   initProjectModal();
@@ -29,28 +28,31 @@ function initStickyNavbar() {
   const mobileBackdrop = document.getElementById('mobile-backdrop');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-  // Keep navbar at top with subtle elevation on scroll
-  function handleScroll() {
-    if (window.scrollY > 15) {
-      navbar.classList.add('scrolled', 'py-2.5');
-      navbar.classList.remove('py-3.5', 'sm:py-4');
-    } else {
-      navbar.classList.remove('scrolled', 'py-2.5');
-      navbar.classList.add('py-3.5', 'sm:py-4');
+  if (navbar) {
+    function handleScroll() {
+      if (window.scrollY > 15) {
+        navbar.classList.add('scrolled', 'py-2.5');
+        navbar.classList.remove('py-3.5', 'sm:py-4');
+      } else {
+        navbar.classList.remove('scrolled', 'py-2.5');
+        navbar.classList.add('py-3.5', 'sm:py-4');
+      }
     }
-  }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
 
   // Mobile Menu Drawer Handlers
   function openMobileMenu() {
+    if (!mobileMenu || !mobileBackdrop) return;
     mobileMenu.classList.remove('translate-x-full');
     mobileBackdrop.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMobileMenu() {
+    if (!mobileMenu || !mobileBackdrop) return;
     mobileMenu.classList.add('translate-x-full');
     mobileBackdrop.classList.add('hidden');
     document.body.style.overflow = '';
@@ -66,38 +68,11 @@ function initStickyNavbar() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 2. ScrollSpy Active Link Tracking                                          */
-/* -------------------------------------------------------------------------- */
-function initScrollSpy() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPos = window.pageYOffset + 120;
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active', 'text-sky-600', 'font-semibold');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active', 'text-sky-600', 'font-semibold');
-      }
-    });
-  }, { passive: true });
-}
-
-/* -------------------------------------------------------------------------- */
-/* 3. Numerical Metric Counters                                               */
+/* 2. Numerical Metric Counters                                               */
 /* -------------------------------------------------------------------------- */
 function initCounters() {
   const counterElements = document.querySelectorAll('.counter-val');
+  if (!counterElements || counterElements.length === 0) return;
   let started = false;
 
   function runCounters() {
@@ -135,11 +110,12 @@ function initCounters() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 4. Filterable Portfolio Cards                                              */
+/* 3. Filterable Portfolio Cards                                              */
 /* -------------------------------------------------------------------------- */
 function initPortfolio() {
   const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
+  if (!filterBtns || filterBtns.length === 0) return;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -174,7 +150,7 @@ function initPortfolio() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 5. Project Modal Details                                                   */
+/* 4. Project Modal Details                                                   */
 /* -------------------------------------------------------------------------- */
 const projectsData = {
   1: {
@@ -233,6 +209,8 @@ function initProjectModal() {
   const modalCloseBtn = document.getElementById('project-modal-close');
   const viewBtns = document.querySelectorAll('.view-project-btn');
 
+  if (!modal) return;
+
   const titleEl = document.getElementById('modal-title');
   const categoryEl = document.getElementById('modal-category');
   const taglineEl = document.getElementById('modal-tagline');
@@ -244,26 +222,30 @@ function initProjectModal() {
     const data = projectsData[id];
     if (!data) return;
 
-    titleEl.textContent = data.title;
-    categoryEl.textContent = data.category;
-    taglineEl.textContent = data.tagline;
-    descEl.textContent = data.description;
+    if (titleEl) titleEl.textContent = data.title;
+    if (categoryEl) categoryEl.textContent = data.category;
+    if (taglineEl) taglineEl.textContent = data.tagline;
+    if (descEl) descEl.textContent = data.description;
 
-    stackContainer.innerHTML = '';
-    data.stack.forEach(tech => {
-      const span = document.createElement('span');
-      span.className = 'px-2.5 py-1 bg-sky-50 text-sky-700 border border-sky-200 rounded-md text-xs font-semibold';
-      span.textContent = tech;
-      stackContainer.appendChild(span);
-    });
+    if (stackContainer) {
+      stackContainer.innerHTML = '';
+      data.stack.forEach(tech => {
+        const span = document.createElement('span');
+        span.className = 'px-2.5 py-1 bg-sky-50 text-sky-700 border border-sky-200 rounded-md text-xs font-semibold';
+        span.textContent = tech;
+        stackContainer.appendChild(span);
+      });
+    }
 
-    metricsContainer.innerHTML = '';
-    data.metrics.forEach(metric => {
-      const div = document.createElement('div');
-      div.className = 'flex items-center gap-2 text-xs sm:text-sm text-slate-700 font-medium';
-      div.innerHTML = `<i class="fas fa-check-circle text-emerald-600"></i> <span>${metric}</span>`;
-      metricsContainer.appendChild(div);
-    });
+    if (metricsContainer) {
+      metricsContainer.innerHTML = '';
+      data.metrics.forEach(metric => {
+        const div = document.createElement('div');
+        div.className = 'flex items-center gap-2 text-xs sm:text-sm text-slate-700 font-medium';
+        div.innerHTML = `<i class="fas fa-check-circle text-emerald-600"></i> <span>${metric}</span>`;
+        metricsContainer.appendChild(div);
+      });
+    }
 
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -287,34 +269,36 @@ function initProjectModal() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 6. Product Demo Enquiry Helper                                             */
+/* 5. Product Demo Enquiry Helper                                             */
 /* -------------------------------------------------------------------------- */
 function initProductEnquiry() {
   const demoBtns = document.querySelectorAll('.product-demo-btn');
   demoBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.preventDefault();
       const prodName = btn.getAttribute('data-product') || 'Software Product';
+      // If contact form is on this page
       const serviceField = document.getElementById('contact-service');
       const messageField = document.getElementById('contact-message');
 
-      if (serviceField) serviceField.value = 'Billing Software Development';
-      if (messageField) {
+      if (serviceField && messageField) {
+        e.preventDefault();
+        serviceField.value = 'Billing Software Development';
         messageField.value = `Hello Sachin, Roshani & Sahil,\n\nI am interested in scheduling a live demonstration of ${prodName} for our organization.\n\nPlease share the feature roadmap, pricing tier, and deployment schedule.`;
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        showToast(`Selected demo for ${prodName}! Scroll down to submit.`);
+      } else {
+        // Redirect to contact.html with pre-selected query param
+        window.location.href = `contact.html?product=${encodeURIComponent(prodName)}`;
       }
-
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
-
-      showToast(`Selected demo for ${prodName}! Scroll down to submit.`);
     });
   });
 }
 
 /* -------------------------------------------------------------------------- */
-/* 7. Interactive Project Cost & Timeline Estimator                           */
+/* 6. Interactive Project Cost & Timeline Estimator                           */
 /* -------------------------------------------------------------------------- */
 function initCostEstimator() {
   const platformSelect = document.getElementById('calc-platform');
@@ -325,6 +309,8 @@ function initCostEstimator() {
   const priceDisplay = document.getElementById('calc-price-display');
   const timeDisplay = document.getElementById('calc-time-display');
   const applyBtn = document.getElementById('calc-apply-btn');
+
+  if (!platformSelect || !priceDisplay) return;
 
   function calculate() {
     let basePrice = 1200;
@@ -398,34 +384,19 @@ function initCostEstimator() {
       const estPrice = priceDisplay.textContent;
       const estTime = timeDisplay.textContent;
 
-      const messageField = document.getElementById('contact-message');
-      const serviceField = document.getElementById('contact-service');
-
-      if (serviceField) {
-        serviceField.value = platformSelect.value === 'mobile' ? 'Mobile Application Development' : 
-                             platformSelect.value === 'billing' ? 'Billing Software Development' :
-                             'Custom Software Development';
-      }
-
-      if (messageField) {
-        messageField.value = `Hello Sachin, Roshani & Sahil,\n\nI evaluated a project using the Q COM Cost Estimator for ${platformText} (${scopeText}).\nEstimated Budget: ${estPrice}\nEstimated Delivery: ${estTime}.\n\nLet's schedule a consultation to begin!`;
-      }
-
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
-
-      showToast("Estimator values applied to contact form below! 🚀");
+      // Transfer to contact.html
+      const query = `?service=${encodeURIComponent(platformSelect.value)}&notes=${encodeURIComponent(`Estimated Budget: ${estPrice}, Timeline: ${estTime} for ${platformText} (${scopeText})`)}`;
+      window.location.href = `contact.html${query}`;
     });
   }
 }
 
 /* -------------------------------------------------------------------------- */
-/* 8. FAQ Accordion                                                           */
+/* 7. FAQ Accordion                                                           */
 /* -------------------------------------------------------------------------- */
 function initFAQ() {
   const faqItems = document.querySelectorAll('.faq-item');
+  if (!faqItems || faqItems.length === 0) return;
 
   faqItems.forEach(item => {
     const trigger = item.querySelector('.faq-trigger');
@@ -453,7 +424,7 @@ function initFAQ() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 9. Contact Form (Direct Email qcomsoft@gmail.com & WhatsApp)               */
+/* 8. Contact Form (Direct Email qcomsoft@gmail.com & WhatsApp)               */
 /* -------------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -461,6 +432,28 @@ function initContactForm() {
   const successCloseBtn = document.getElementById('form-success-close');
   const mailtoBtn = document.getElementById('form-mailto-btn');
   const whatsappBtn = document.getElementById('form-whatsapp-btn');
+
+  // Handle URL parameters if coming from estimator or product demo
+  const urlParams = new URLSearchParams(window.location.search);
+  const prodParam = urlParams.get('product');
+  const serviceParam = urlParams.get('service');
+  const notesParam = urlParams.get('notes');
+
+  const serviceField = document.getElementById('contact-service');
+  const messageField = document.getElementById('contact-message');
+
+  if (prodParam && messageField) {
+    messageField.value = `Hello Sachin, Roshani & Sahil,\n\nI am contacting you to request a live demonstration and consultation for ${prodParam}.\nPlease provide the deployment roadmap and pricing structure.`;
+  } else if (notesParam && messageField) {
+    messageField.value = `Hello Sachin, Roshani & Sahil,\n\nI configured an estimate using the Q COM Cost Estimator:\n${notesParam}\n\nLet's schedule a call to begin!`;
+  }
+
+  if (serviceParam && serviceField) {
+    if (serviceParam === 'mobile') serviceField.value = 'Mobile Application Development';
+    else if (serviceParam === 'billing') serviceField.value = 'Billing Software Development';
+    else if (serviceParam === 'web') serviceField.value = 'Website Development';
+    else if (serviceParam === 'ai') serviceField.value = 'Custom Software Development';
+  }
 
   if (!form) return;
 
@@ -518,7 +511,7 @@ function initContactForm() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 10. Newsletter Form                                                        */
+/* 9. Newsletter Form                                                         */
 /* -------------------------------------------------------------------------- */
 function initNewsletter() {
   const form = document.getElementById('newsletter-form');
@@ -535,7 +528,7 @@ function initNewsletter() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 11. Back to Top                                                            */
+/* 10. Back to Top                                                            */
 /* -------------------------------------------------------------------------- */
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
@@ -557,7 +550,7 @@ function initBackToTop() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 12. Toast Notification Utility                                             */
+/* 11. Toast Notification Utility                                             */
 /* -------------------------------------------------------------------------- */
 function showToast(msg) {
   const toast = document.getElementById('toast');

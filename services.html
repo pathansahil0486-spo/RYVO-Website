@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Services | Q COM Software Solutions</title>
+  
+  <meta name="description" content="Explore software development services by Q COM Software Solutions: Billing Software, Mobile Apps, Custom Web Apps, UI/UX Design, E-Commerce, and IT Consulting.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://qcomsoftware.com/services">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: { 'xs': '360px', 'sm': '640px', 'md': '768px', 'lg': '1024px', 'xl': '1280px' },
+        extend: {
+          colors: { brand: { navy: '#002244', blue: '#0284c7', darkblue: '#0369a1', accent: '#0052cc', light: '#f8fafc' } },
+          fontFamily: { sans: ['"Inter"', '"Plus Jakarta Sans"', '-apple-system', 'sans-serif'], display: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#f8fafc] text-slate-800 antialiased">
+
+  <!-- Announcement Bar -->
+  <header class="bg-slate-900 border-b border-slate-800 py-2 px-3 sm:px-6 text-[11px] sm:text-xs font-medium text-slate-300">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1.5 sm:gap-4 text-center sm:text-left">
+      <div class="flex items-center justify-center gap-2">
+        <span class="flex h-2 w-2 relative flex-shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span class="text-slate-200"><strong>Q COM Software Solutions</strong> • Enterprise Engineering Services</span>
+      </div>
+      <div class="flex items-center justify-center gap-4 text-[11px]">
+        <a href="mailto:qcomsoft@gmail.com" class="hover:text-sky-400 text-slate-300"><i class="fas fa-envelope text-sky-400"></i> qcomsoft@gmail.com</a>
+        <a href="https://instagram.com/qcomsoftware" target="_blank" class="hover:text-pink-400 text-slate-300"><i class="fab fa-instagram text-pink-400"></i> @qcomsoftware</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Top Navbar -->
+  <nav id="navbar" class="sticky-top-navbar py-3.5 sm:py-4 px-3 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
+        <div class="h-8 sm:h-10 px-1.5 py-0.5 rounded-lg flex items-center">
+          <img src="assets/images/logo-cropped.png" alt="Q COM" class="h-7 sm:h-9 object-contain">
+        </div>
+        <div>
+          <span class="font-extrabold text-sm sm:text-lg tracking-tight text-slate-900 group-hover:text-sky-600 transition-colors">Q COM</span>
+          <span class="text-[9px] sm:text-[10px] block text-sky-600 font-bold tracking-wider uppercase leading-none">Software Solutions</span>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-5 xl:gap-6 text-sm font-medium">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="leadership.html" class="nav-link">Leadership</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="products.html" class="nav-link">Our Products</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="estimator.html" class="nav-link">Estimator</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-sky-600 hover:bg-sky-700 text-white text-xs sm:text-sm font-semibold shadow-sm transition-all duration-200">
+          <span>Get Free Quote</span>
+          <i class="fas fa-arrow-right text-[10px]"></i>
+        </a>
+        <button id="mobile-menu-btn" aria-label="Open Mobile Menu" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-lg bg-slate-100 text-slate-700 hover:text-slate-900 border border-slate-200">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-backdrop" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-[84vw] max-w-[320px] bg-white border-l border-slate-200 z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-5 flex flex-col justify-between overflow-y-auto shadow-2xl">
+    <div>
+      <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+        <div class="flex items-center gap-2">
+          <img src="assets/images/logo-cropped.png" alt="Q COM" class="h-6 object-contain">
+          <div><span class="font-extrabold text-slate-900 text-xs block">Q COM Software</span><span class="text-[9px] text-sky-600 font-bold block uppercase">Solutions</span></div>
+        </div>
+        <button id="mobile-menu-close" class="w-9 h-9 flex items-center justify-center rounded-lg bg-slate-100 text-slate-500 hover:text-slate-800"><i class="fas fa-times text-sm"></i></button>
+      </div>
+      <div class="flex flex-col gap-2 mt-5 text-sm font-medium text-slate-700">
+        <a href="index.html" class="mobile-nav-link hover:text-sky-600 hover:bg-sky-50 rounded-lg px-3 py-2 flex items-center gap-3"><i class="fas fa-home text-sky-600 w-5"></i> Home</a>
+        <a href="about.html" class="mobile-nav-link hover:text-sky-600 hover:bg-sky-50 rounded-lg px-3 py-2 flex items-center gap-3"><i class="fas fa-building text-sky-600 w-5"></i> About Us</a>
+        <a href="leadership.html" class="mobile-nav-link hover:text-sky-600 hover:bg-sky-50 rounded-lg px-3 py-2 flex items-center gap-3"><i class="fas fa-user-tie text-sky-600 w-5"></i> Leadership Team</a>
+        <a href="services.html" class="mobile-nav-link text-sky-600 font-bold bg-sky-50 rounded-lg px-3 py-2 flex items-center gap-3"><i class="fas fa-layer-group text-sky-600 w-5"></i> Services</a>
+        <a href="products.html" class="mobile-nav-link hover:text-sky-600 hover:bg-sky-50 rounded-lg px-3 py-2 flex items-center gap-3"><i class="fas fa-box-open text-sky-600 w-5"></i> Our Products</a>
+        <a href="portfolio.html" class="mobile-nav-link hover:text-sky-600 hover:bg-sky-50 rounded-lg px-3 py-2 flex items-center gap-3"><i class="fas fa-briefcase text-sky-600 w-5"></i> Portfolio & Work</a>
+        <a href="estimator.html" class="mobile-nav-link hover:text-sky-600 hover:bg-sky-50 rounded-lg px-3 py-2 flex items-center gap-3"><i class="fas fa-calculator text-sky-600 w-5"></i> Cost Estimator</a>
+        <a href="contact.html" class="mobile-nav-link hover:text-sky-600 hover:bg-sky-50 rounded-lg px-3 py-2 flex items-center gap-3"><i class="fas fa-envelope text-sky-600 w-5"></i> Contact Us</a>
+      </div>
+    </div>
+    <div class="pt-4 border-t border-slate-200">
+      <a href="contact.html" class="w-full py-3 rounded-lg bg-sky-600 hover:bg-sky-700 text-center text-white font-semibold text-xs shadow-sm block">Start Your Project</a>
+    </div>
+  </div>
+
+  <!-- Header Banner -->
+  <section class="py-12 sm:py-16 bg-white border-b border-slate-200 bg-grid-pattern text-center">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <span class="text-sky-600 text-xs sm:text-sm font-bold tracking-wider uppercase">End-to-End Capabilities</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 mt-2">Comprehensive <span class="gradient-text">IT & Software Services</span></h1>
+      <p class="text-slate-600 max-w-2xl mx-auto mt-3 text-sm sm:text-base leading-relaxed">
+        Engineered in strict compliance with the Software Requirements Specification (SRS v1.0).
+      </p>
+    </div>
+  </section>
+
+  <!-- All 7 Services in Detail -->
+  <section class="py-14 sm:py-20 px-3 sm:px-6 lg:px-8 bg-[#f8fafc]">
+    <div class="max-w-7xl mx-auto space-y-10">
+      
+      <!-- 1. Billing Software Development -->
+      <div class="corp-card p-6 sm:p-10 border-2 border-sky-400 bg-gradient-to-br from-sky-50/50 via-white to-white flex flex-col lg:flex-row gap-8 items-start">
+        <div class="w-16 h-16 rounded-2xl bg-sky-100 text-sky-700 text-3xl flex items-center justify-center flex-shrink-0">
+          <i class="fas fa-file-invoice-dollar"></i>
+        </div>
+        <div class="space-y-3 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase bg-sky-100 text-sky-800 border border-sky-200">Specialized Domain</span>
+            <span class="text-xs text-slate-500 font-mono">Retail, Wholesale & Supermarkets</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900">Billing Software Development (POS, GST & Invoicing)</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We architect lightning-fast point-of-sale (POS) and accounting software designed to manage high-volume customer queues with sub-second receipt generation. Incorporates dynamic GST/VAT compliance, automatic tax calculations, offline-first local database caching with cloud sync, and thermal printer integrations.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-600"></i> Automatic WhatsApp Invoice dispatch to customer phones</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-600"></i> Multi-branch stock inventory sync with low-stock alerts</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-600"></i> E-Way Bill & E-Invoice portal integrations</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-600"></i> Barcode and QR code scanning with thermal laser printing</div>
+          </div>
+          <div class="pt-4">
+            <a href="contact.html?service=billing" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-sky-600 hover:bg-sky-700 text-white font-semibold text-xs shadow-sm">
+              <span>Request Billing Software Demo</span> <i class="fas fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Mobile Application Development -->
+      <div class="corp-card p-6 sm:p-10 bg-white flex flex-col lg:flex-row gap-8 items-start">
+        <div class="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 text-3xl flex items-center justify-center flex-shrink-0">
+          <i class="fas fa-mobile-screen"></i>
+        </div>
+        <div class="space-y-3 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase bg-blue-50 text-blue-700 border border-blue-200">iOS & Android</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900">Mobile Application Development</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Native and cross-platform mobile apps engineered with Flutter, React Native, Swift, and Kotlin. We craft apps with 60fps animations, biometric authentication, offline persistence, push notifications, and seamless background sync.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fas fa-check text-blue-600"></i> Cross-Platform Flutter & React Native</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-blue-600"></i> Apple App Store & Google Play Store publishing</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-blue-600"></i> In-app purchases, payment gateways, and geolocation</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-blue-600"></i> Real-time push notifications via Firebase FCM</div>
+          </div>
+          <div class="pt-4">
+            <a href="contact.html?service=mobile" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs shadow-sm">
+              <span>Consult on Mobile Apps</span> <i class="fas fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Website Development -->
+      <div class="corp-card p-6 sm:p-10 bg-white flex flex-col lg:flex-row gap-8 items-start">
+        <div class="w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 text-3xl flex items-center justify-center flex-shrink-0">
+          <i class="fas fa-globe"></i>
+        </div>
+        <div class="space-y-3 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase bg-indigo-50 text-indigo-700 border border-indigo-200">High-Performance Web</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900">Website & Full-Stack Web Development</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            From lightning-fast static corporate portals to high-traffic full-stack Next.js and MERN applications with 100/100 Lighthouse performance score. Fully responsive across 320px mobile to 4K displays.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Next.js 14, React, Tailwind CSS, and Node.js</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Instant zero-configuration Vercel and Netlify deployment</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Advanced SEO structure, OpenGraph, and Schema.org metadata</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-indigo-600"></i> Headless CMS integration and dynamic API endpoints</div>
+          </div>
+          <div class="pt-4">
+            <a href="contact.html?service=web" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs shadow-sm">
+              <span>Build Your Web Platform</span> <i class="fas fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Custom Software Development -->
+      <div class="corp-card p-6 sm:p-10 bg-white flex flex-col lg:flex-row gap-8 items-start">
+        <div class="w-16 h-16 rounded-2xl bg-cyan-50 text-cyan-600 text-3xl flex items-center justify-center flex-shrink-0">
+          <i class="fas fa-code"></i>
+        </div>
+        <div class="space-y-3 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase bg-cyan-50 text-cyan-700 border border-cyan-200">Enterprise Bespoke</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900">Custom Software Development</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Bespoke internal tools, customer relationship management (CRM) workflows, supply chain ERPs, and automated backend data pipelines configured around your proprietary company processes.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-600"></i> Microservices and distributed cloud computing</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-600"></i> Multi-tenant data segregation with Postgres and MongoDB</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-600"></i> Enterprise RBAC permissions and audit logging</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-cyan-600"></i> Third-party API integrations (SAP, QuickBooks, Stripe)</div>
+          </div>
+          <div class="pt-4">
+            <a href="contact.html?service=custom" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs shadow-sm">
+              <span>Discuss Custom Specs</span> <i class="fas fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. UI/UX Design -->
+      <div class="corp-card p-6 sm:p-10 bg-white flex flex-col lg:flex-row gap-8 items-start">
+        <div class="w-16 h-16 rounded-2xl bg-pink-50 text-pink-600 text-3xl flex items-center justify-center flex-shrink-0">
+          <i class="fas fa-bezier-curve"></i>
+        </div>
+        <div class="space-y-3 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase bg-pink-50 text-pink-700 border border-pink-200">Product Design</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900">UI/UX Design & Interactive Prototyping</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Human-centered product design that elevates brand authority and boosts customer conversion rates. Clickable prototypes, Figma design systems, wireframing, and comprehensive usability audits.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fas fa-check text-pink-600"></i> Complete Figma design systems with reusable components</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-pink-600"></i> Interactive clickable wireframes for stakeholder approval</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-pink-600"></i> Accessibility testing and WCAG color contrast standards</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-pink-600"></i> User journey mapping and conversion funnel analysis</div>
+          </div>
+          <div class="pt-4">
+            <a href="contact.html?service=uiux" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs shadow-sm">
+              <span>Schedule Design Review</span> <i class="fas fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. E-Commerce Solutions -->
+      <div class="corp-card p-6 sm:p-10 bg-white flex flex-col lg:flex-row gap-8 items-start">
+        <div class="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 text-3xl flex items-center justify-center flex-shrink-0">
+          <i class="fas fa-cart-shopping"></i>
+        </div>
+        <div class="space-y-3 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase bg-amber-50 text-amber-700 border border-amber-200">Digital Commerce</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900">E-Commerce & Multi-Vendor Solutions</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Custom storefronts, headless Shopify, multi-vendor marketplaces, and subscription engines engineered for high-speed conversion, instant cart operations, and secure multi-currency payment gateways.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Stripe, Razorpay, and PayPal gateway checkouts</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Real-time inventory reservation and flash sale handling</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Vendor commission split dashboards</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-amber-600"></i> Automated courier tracking and shipping API integration</div>
+          </div>
+          <div class="pt-4">
+            <a href="contact.html?service=ecommerce" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs shadow-sm">
+              <span>Launch Storefront</span> <i class="fas fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. IT Consulting and Support -->
+      <div class="corp-card p-6 sm:p-10 bg-white flex flex-col lg:flex-row gap-8 items-start">
+        <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 text-3xl flex items-center justify-center flex-shrink-0">
+          <i class="fas fa-screwdriver-wrench"></i>
+        </div>
+        <div class="space-y-3 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase bg-emerald-50 text-emerald-700 border border-emerald-200">24/7 Operations</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900">IT Consulting and Continuous Support</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Strategic IT advisory, cloud migration (AWS, Azure, Google Cloud), security vulnerability auditing, infrastructure cost optimization, and SLA-backed ongoing maintenance.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-700">
+            <div class="flex items-center gap-2"><i class="fas fa-check text-emerald-600"></i> 24/7 technical monitoring and automated alerting</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-emerald-600"></i> Cloud bill optimization reducing hosting costs by up to 40%</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-emerald-600"></i> Code audits, bug fixing, and continuous software patching</div>
+            <div class="flex items-center gap-2"><i class="fas fa-check text-emerald-600"></i> Backup disaster recovery planning and SSL automation</div>
+          </div>
+          <div class="pt-4">
+            <a href="contact.html?service=consulting" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs shadow-sm">
+              <span>Request IT Advisory</span> <i class="fas fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div class="sm:col-span-2 space-y-3">
+          <div class="flex items-center gap-2.5">
+            <div class="h-8 sm:h-9 px-2 py-0.5 bg-white rounded-lg flex items-center"><img src="assets/images/logo-cropped.png" alt="Q COM" class="h-6 sm:h-7 object-contain"></div>
+            <div><span class="font-bold text-white text-sm sm:text-base">Q COM</span><span class="text-[10px] sm:text-xs block text-sky-400 font-medium">Software Solutions</span></div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">Smart Technology | Software Development & IT Solutions.</p>
+          <p><i class="fas fa-envelope text-sky-400 mr-2"></i> <a href="mailto:qcomsoft@gmail.com" class="hover:text-white">qcomsoft@gmail.com</a></p>
+          <p><i class="fab fa-instagram text-pink-400 mr-2"></i> <a href="https://instagram.com/qcomsoftware" target="_blank" class="hover:text-white">@qcomsoftware</a></p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs sm:text-sm mb-3">Pages</h4>
+          <ul class="space-y-1.5 text-xs">
+            <li><a href="index.html" class="hover:text-sky-400">Home</a></li>
+            <li><a href="about.html" class="hover:text-sky-400">About Us</a></li>
+            <li><a href="leadership.html" class="hover:text-sky-400">Leadership Team</a></li>
+            <li><a href="services.html" class="hover:text-sky-400 font-bold text-white">Services</a></li>
+            <li><a href="products.html" class="hover:text-sky-400">Our Products</a></li>
+            <li><a href="contact.html" class="hover:text-sky-400">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs sm:text-sm mb-3">Core Expertise</h4>
+          <ul class="space-y-1.5 text-xs">
+            <li><a href="services.html" class="hover:text-sky-400">Billing Software (POS)</a></li>
+            <li><a href="services.html" class="hover:text-sky-400">Mobile Applications</a></li>
+            <li><a href="services.html" class="hover:text-sky-400">Website Development</a></li>
+            <li><a href="services.html" class="hover:text-sky-400">Custom Software</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-xs sm:text-sm mb-3">Have a Project?</h4>
+          <p class="text-xs text-slate-400 mb-2">Speak directly with our founders.</p>
+          <a href="contact.html" class="block w-full py-2 bg-sky-600 hover:bg-sky-500 text-white text-center rounded-lg text-xs font-semibold">Get A Free Quote</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-slate-800 text-center sm:text-left text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p>© 2026 Q COM Software Solutions. All Rights Reserved.</p>
+        <p>Leadership: Sachin Rathore • Roshani • Sahil Pathan</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/?text=Hello%20Q%20COM%20Software%20Solutions%2C%20I%20would%20like%20to%20inquire%20about%20software%20development%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-5 right-4 sm:right-6 z-40 w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center text-xl sm:text-2xl shadow-xl hover:scale-105 transition-all"><i class="fab fa-whatsapp"></i></a>
+  <button id="back-to-top" aria-label="Back to Top" class="fixed bottom-20 right-4 sm:right-6 z-40 w-10 sm:w-11 h-10 sm:h-11 rounded-full bg-white text-slate-600 hover:text-slate-900 flex items-center justify-center text-xs sm:text-sm shadow-md border border-slate-200 opacity-0 pointer-events-none transition-all"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
