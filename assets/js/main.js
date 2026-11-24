@@ -283,7 +283,7 @@ function initProductEnquiry() {
       if (serviceField && messageField) {
         e.preventDefault();
         serviceField.value = 'Billing Software Development';
-        messageField.value = `Hello Sachin, Roshani & Sahil,\n\nI am interested in scheduling a live demonstration of ${prodName} for our organization.\n\nPlease share the feature roadmap, pricing tier, and deployment schedule.`;
+        messageField.value = `Hello Sachin, Roshani Chavhan & Sahil,\n\nI am interested in scheduling a live demonstration of ${prodName} for our organization.\n\nPlease share the feature roadmap, pricing tier, and deployment schedule.`;
         const contactSection = document.getElementById('contact');
         if (contactSection) {
           contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -443,9 +443,9 @@ function initContactForm() {
   const messageField = document.getElementById('contact-message');
 
   if (prodParam && messageField) {
-    messageField.value = `Hello Sachin, Roshani & Sahil,\n\nI am contacting you to request a live demonstration and consultation for ${prodParam}.\nPlease provide the deployment roadmap and pricing structure.`;
+    messageField.value = `Hello Sachin, Roshani Chavhan & Sahil,\n\nI am contacting you to request a live demonstration and consultation for ${prodParam}.\nPlease provide the deployment roadmap and pricing structure.`;
   } else if (notesParam && messageField) {
-    messageField.value = `Hello Sachin, Roshani & Sahil,\n\nI configured an estimate using the Q COM Cost Estimator:\n${notesParam}\n\nLet's schedule a call to begin!`;
+    messageField.value = `Hello Sachin, Roshani Chavhan & Sahil,\n\nI configured an estimate using the Q COM Cost Estimator:\n${notesParam}\n\nLet's schedule a call to begin!`;
   }
 
   if (serviceParam && serviceField) {
@@ -478,7 +478,7 @@ function initContactForm() {
     // Prepare direct mailto link
     const emailSubject = encodeURIComponent(`Project Enquiry from ${name} - Q COM Software`);
     const emailBody = encodeURIComponent(
-      `Hello Q COM Software Team (Sachin, Roshani, Sahil),\n\n` +
+      `Hello Q COM Software Team (Sachin, Roshani Chavhan, Sahil),\n\n` +
       `Client Name: ${name}\n` +
       `Client Email: ${email}\n` +
       `Phone/WhatsApp: ${phone || 'Not provided'}\n` +
@@ -491,7 +491,7 @@ function initContactForm() {
 
     // Direct WhatsApp message to +91 80802 71703 (with +91 93719 60486 alternate)
     const waText = encodeURIComponent(
-      `Hello Q COM Software Solutions (Sachin, Roshani, Sahil),\n` +
+      `Hello Q COM Software Solutions (Sachin, Roshani Chavhan, Sahil),\n` +
       `My name is: ${name}\n` +
       `I need: ${service}\n` +
       `Email: ${email}\n` +
