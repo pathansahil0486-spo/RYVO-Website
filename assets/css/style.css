@@ -1,0 +1,221 @@
+/* ==========================================================================
+   Q COM Software Solutions - Corporate Stylesheet
+   Brand Theme: Deep Midnight Navy (#001738, #0a192f) & Electric Cyan/Blue (#0284c7, #38bdf8)
+   Compliant with Q COM Software Solutions SRS v1.0
+   ========================================================================== */
+
+:root {
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --secondary: #002244;
+  --accent: #38bdf8;
+  --dark-bg: #070c18;
+  --dark-card: #0f172a;
+  --light-bg: #f8fafc;
+  --light-card: #ffffff;
+}
+
+/* Base Smooth Scrolling & Font Setup */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+::-webkit-scrollbar-thumb {
+  background: #0284c7;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* Glassmorphism Styles */
+.glass-nav {
+  background: rgba(11, 17, 32, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(2, 132, 199, 0.18);
+}
+
+/* Light Mode Adaptations */
+html:not(.dark) body {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+html:not(.dark) .glass-nav {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+html:not(.dark) .glass-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 25px -4px rgba(0, 0, 0, 0.06);
+}
+
+html:not(.dark) .glass-card:hover {
+  border-color: #0284c7;
+  box-shadow: 0 16px 32px -6px rgba(2, 132, 199, 0.16);
+}
+
+html:not(.dark) .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html:not(.dark) .text-slate-300 {
+  color: #334155 !important;
+}
+
+html:not(.dark) .text-slate-400 {
+  color: #64748b !important;
+}
+
+html:not(.dark) .bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) .bg-slate-950 {
+  background-color: #f1f5f9 !important;
+}
+
+html:not(.dark) .bg-slate-800\/60 {
+  background-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .border-slate-800 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #2563eb 55%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-alt {
+  background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Background Ambient Glow */
+.ambient-glow {
+  position: absolute;
+  filter: blur(90px);
+  z-index: 0;
+  opacity: 0.22;
+  pointer-events: none;
+  border-radius: 50%;
+  animation: floatAmbient 12s infinite alternate ease-in-out;
+}
+
+@keyframes floatAmbient {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(35px, -25px) scale(1.1); }
+  100% { transform: translate(-25px, 30px) scale(0.95); }
+}
+
+/* Tech Marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Nav Link Underline Hover */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #38bdf8;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Accordion Smooth Transitions */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.accordion-content.open {
+  max-height: 500px;
+}
+
+/* Toast Notification */
+#toast {
+  transform: translateY(150%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+#toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Button Shimmer */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(30deg);
+  animation: shimmerAnim 4s infinite linear;
+}
+@keyframes shimmerAnim {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}

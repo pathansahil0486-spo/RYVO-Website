@@ -1,0 +1,604 @@
+/**
+ * Q COM Software Solutions - Interactive Core Scripts
+ * Compliant with Q COM Software Solutions SRS v1.0
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  initNavigation();
+  initScrollSpy();
+  initCounters();
+  initPortfolio();
+  initProjectModal();
+  initProductEnquiry();
+  initCostEstimator();
+  initFAQ();
+  initContactForm();
+  initNewsletter();
+  initBackToTop();
+});
+
+/* -------------------------------------------------------------------------- */
+/* 1. Theme Toggle (Dark / Light Mode)                                        */
+/* -------------------------------------------------------------------------- */
+function initTheme() {
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
+  const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+  
+  const savedTheme = localStorage.getItem('qcom-theme') || 'dark';
+  applyTheme(savedTheme);
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      if (themeIcon) themeIcon.className = 'fas fa-sun text-amber-400 text-lg';
+      if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-sun text-amber-400 text-lg';
+    } else {
+      document.documentElement.classList.remove('dark');
+      if (themeIcon) themeIcon.className = 'fas fa-moon text-slate-700 text-lg';
+      if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-moon text-slate-700 text-lg';
+    }
+    localStorage.setItem('qcom-theme', theme);
+  }
+
+  function toggle() {
+    const isDark = document.documentElement.classList.contains('dark');
+    applyTheme(isDark ? 'light' : 'dark');
+  }
+
+  if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggle);
+  if (mobileThemeToggleBtn) mobileThemeToggleBtn.addEventListener('click', toggle);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Navigation & Mobile Drawer                                              */
+/* -------------------------------------------------------------------------- */
+function initNavigation() {
+  const navbar = document.getElementById('navbar');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileBackdrop = document.getElementById('mobile-backdrop');
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+  // Sticky Navbar Effect on Scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.classList.add('shadow-xl', 'py-3');
+      navbar.classList.remove('py-5');
+    } else {
+      navbar.classList.remove('shadow-xl', 'py-3');
+      navbar.classList.add('py-5');
+    }
+  });
+
+  // Mobile Menu Drawer Handlers
+  function openMobileMenu() {
+    mobileMenu.classList.remove('translate-x-full');
+    mobileBackdrop.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    mobileMenu.classList.add('translate-x-full');
+    mobileBackdrop.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+  if (mobileMenuCloseBtn) mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
+  if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileMenu);
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. ScrollSpy Active Link Tracking                                          */
+/* -------------------------------------------------------------------------- */
+function initScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollPos = window.pageYOffset + 140;
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('text-sky-400', 'font-semibold', 'active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('text-sky-400', 'font-semibold', 'active');
+      }
+    });
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. Animated Numerical Metric Counters                                      */
+/* -------------------------------------------------------------------------- */
+function initCounters() {
+  const counterElements = document.querySelectorAll('.counter-val');
+  let started = false;
+
+  function runCounters() {
+    counterElements.forEach(counter => {
+      const target = parseFloat(counter.getAttribute('data-target'));
+      const isDecimal = target % 1 !== 0;
+      const duration = 1800;
+      const steps = 50;
+      const stepValue = target / steps;
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += stepValue;
+        if (current >= target) {
+          counter.textContent = isDecimal ? target.toFixed(1) : Math.round(target);
+          clearInterval(timer);
+        } else {
+          counter.textContent = isDecimal ? current.toFixed(1) : Math.round(current);
+        }
+      }, duration / steps);
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !started) {
+        runCounters();
+        started = true;
+      }
+    });
+  }, { threshold: 0.25 });
+
+  const statsSection = document.getElementById('stats-section');
+  if (statsSection) observer.observe(statsSection);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. Filterable Portfolio Cards                                              */
+/* -------------------------------------------------------------------------- */
+function initPortfolio() {
+  const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-sky-500', 'text-white', 'shadow-lg', 'shadow-sky-500/20');
+        b.classList.add('bg-slate-800/60', 'text-slate-300');
+      });
+
+      btn.classList.add('bg-sky-500', 'text-white', 'shadow-lg', 'shadow-sky-500/20');
+      btn.classList.remove('bg-slate-800/60', 'text-slate-300');
+
+      const filter = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'block';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 10);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 250);
+        }
+      });
+    });
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* 6. Portfolio Modal Quick View Data                                         */
+/* -------------------------------------------------------------------------- */
+const projectsData = {
+  1: {
+    title: "ApexFlow - Enterprise ERP & CRM Cloud",
+    category: "Custom Software & Cloud ERP",
+    tagline: "High-scale modular ERP managing operations for 40,000+ business users.",
+    description: "Architected a custom end-to-end ERP and customer relationship management platform featuring live telemetry, multi-branch inventory tracking, automated invoicing, and role-based ACL security.",
+    stack: ["React.js", "Node.js", "PostgreSQL", "Docker", "AWS", "TailwindCSS"],
+    metrics: ["99.98% Uptime SLA", "3.4x Faster Operations", "40K+ Daily Users"]
+  },
+  2: {
+    title: "PayPulse - High-Frequency FinTech Wallet",
+    category: "Mobile App & FinTech",
+    tagline: "Ultra-secure cross-platform mobile wallet and payment gateway system.",
+    description: "Built a next-generation iOS & Android FinTech application with biometric passkey authentication, instant P2P transfers, merchant QR scanning, and automated PCI-DSS compliant encryption.",
+    stack: ["Flutter", "FastAPI (Python)", "Redis", "Supabase", "Stripe API"],
+    metrics: ["PCI-DSS Compliant", "< 120ms Txn Latency", "500K+ Transfers"]
+  },
+  3: {
+    title: "Q-Bill Pro Cloud - GST & Retail POS Suite",
+    category: "Billing Software Development",
+    tagline: "Dedicated billing & inventory software for retail chains and distributors.",
+    description: "Engineered high-speed desktop and cloud billing software with offline-first synchronization, barcode scanning, thermal receipt printing, GST calculation, and WhatsApp bill dispatching.",
+    stack: ["Electron", "React", "Node.js", "SQLite/PostgreSQL", "TailwindCSS"],
+    metrics: ["0.2s Invoice Generation", "100% GST Compliant", "Works Offline"]
+  },
+  4: {
+    title: "CareSync - AI Telehealth & Hospital Hub",
+    category: "Web & Mobile Development",
+    tagline: "HIPAA-ready telemedicine platform connecting doctors and patients.",
+    description: "An intuitive healthcare suite supporting HD encrypted video consultations, smart electronic prescriptions, automated appointment queues, and centralized medical record vaults.",
+    stack: ["Next.js 14", "WebRTC", "Express.js", "MongoDB", "Tailwind CSS"],
+    metrics: ["HIPAA Compliant", "15,000+ Consultations", "4.9/5 Patient Rating"]
+  },
+  5: {
+    title: "NexusVision - Predictive AI Analytics SaaS",
+    category: "AI & Machine Learning",
+    tagline: "Intelligent analytics pipeline extracting deep actionable business forecasts.",
+    description: "An AI-driven SaaS platform ingesting real-time operational streams, running predictive churn models, and providing executive decision engines with automated AI summaries.",
+    stack: ["Python", "TensorFlow", "FastAPI", "React", "Kafka", "PostgreSQL"],
+    metrics: ["88% Churn Accuracy", "Real-Time Streaming", "12 Enterprise Clients"]
+  },
+  6: {
+    title: "NovaBazaar - Global Multi-Vendor Marketplace",
+    category: "E-Commerce Solutions",
+    tagline: "Ultra-fast headless commerce platform with multi-currency checkouts.",
+    description: "Engineered a headless multi-vendor e-commerce platform with sub-second page loads, real-time inventory locking, seller commission dashboards, and omnichannel logistics integrations.",
+    stack: ["Next.js", "Node.js", "Redis", "Elasticsearch", "Stripe", "AWS S3"],
+    metrics: ["sub-500ms Page Loads", "$2.8M GMV Processed", "200+ Vendors"]
+  }
+};
+
+function initProjectModal() {
+  const modal = document.getElementById('project-modal');
+  const modalBackdrop = document.getElementById('project-modal-backdrop');
+  const modalCloseBtn = document.getElementById('project-modal-close');
+  const viewBtns = document.querySelectorAll('.view-project-btn');
+
+  const titleEl = document.getElementById('modal-title');
+  const categoryEl = document.getElementById('modal-category');
+  const taglineEl = document.getElementById('modal-tagline');
+  const descEl = document.getElementById('modal-desc');
+  const stackContainer = document.getElementById('modal-stack');
+  const metricsContainer = document.getElementById('modal-metrics');
+
+  function openModal(id) {
+    const data = projectsData[id];
+    if (!data) return;
+
+    titleEl.textContent = data.title;
+    categoryEl.textContent = data.category;
+    taglineEl.textContent = data.tagline;
+    descEl.textContent = data.description;
+
+    stackContainer.innerHTML = '';
+    data.stack.forEach(tech => {
+      const span = document.createElement('span');
+      span.className = 'px-3 py-1 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full text-xs font-semibold';
+      span.textContent = tech;
+      stackContainer.appendChild(span);
+    });
+
+    metricsContainer.innerHTML = '';
+    data.metrics.forEach(metric => {
+      const div = document.createElement('div');
+      div.className = 'flex items-center gap-2 text-sm text-slate-300 font-medium';
+      div.innerHTML = `<i class="fas fa-check-circle text-emerald-400"></i> <span>${metric}</span>`;
+      metricsContainer.appendChild(div);
+    });
+
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  viewBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = btn.getAttribute('data-id');
+      openModal(id);
+    });
+  });
+
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+  if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. Product Demo Enquiry Helper                                             */
+/* -------------------------------------------------------------------------- */
+function initProductEnquiry() {
+  const demoBtns = document.querySelectorAll('.product-demo-btn');
+  demoBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const prodName = btn.getAttribute('data-product') || 'Software Product';
+      const serviceField = document.getElementById('contact-service');
+      const messageField = document.getElementById('contact-message');
+
+      if (serviceField) serviceField.value = 'Billing Software Development';
+      if (messageField) {
+        messageField.value = `Hello Sachin, Roshani & Sahil,\n\nI am interested in scheduling a live demonstration of ${prodName} for our organization.\n\nPlease share the feature roadmap, pricing tier, and deployment schedule.`;
+      }
+
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      showToast(`Selected demo for ${prodName}! Scroll down to submit.`);
+    });
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* 8. Interactive Project Cost & Timeline Estimator                           */
+/* -------------------------------------------------------------------------- */
+function initCostEstimator() {
+  const platformSelect = document.getElementById('calc-platform');
+  const scopeSelect = document.getElementById('calc-scope');
+  const timelineSelect = document.getElementById('calc-speed');
+  const featureCheckboxes = document.querySelectorAll('.calc-feature');
+  
+  const priceDisplay = document.getElementById('calc-price-display');
+  const timeDisplay = document.getElementById('calc-time-display');
+  const applyBtn = document.getElementById('calc-apply-btn');
+
+  function calculate() {
+    let basePrice = 1200;
+    let baseWeeks = 3;
+
+    const platform = platformSelect ? platformSelect.value : 'web';
+    if (platform === 'mobile') {
+      basePrice = 1800;
+      baseWeeks = 4;
+    } else if (platform === 'billing') {
+      basePrice = 1500;
+      baseWeeks = 3;
+    } else if (platform === 'fullstack') {
+      basePrice = 2800;
+      baseWeeks = 6;
+    } else if (platform === 'ai') {
+      basePrice = 3500;
+      baseWeeks = 7;
+    }
+
+    const scope = scopeSelect ? scopeSelect.value : 'mvp';
+    if (scope === 'mvp') {
+      basePrice *= 1.0;
+      baseWeeks *= 1.0;
+    } else if (scope === 'growth') {
+      basePrice *= 1.6;
+      baseWeeks *= 1.4;
+    } else if (scope === 'enterprise') {
+      basePrice *= 2.6;
+      baseWeeks *= 2.1;
+    }
+
+    featureCheckboxes.forEach(cb => {
+      if (cb.checked) {
+        const cost = parseInt(cb.getAttribute('data-cost') || '0', 10);
+        basePrice += cost;
+        baseWeeks += 0.4;
+      }
+    });
+
+    const speed = timelineSelect ? timelineSelect.value : 'standard';
+    if (speed === 'fast') {
+      basePrice *= 1.25;
+      baseWeeks = Math.max(2, Math.round(baseWeeks * 0.7));
+    } else {
+      baseWeeks = Math.round(baseWeeks);
+    }
+
+    const minPrice = Math.round(basePrice * 0.9);
+    const maxPrice = Math.round(basePrice * 1.15);
+
+    if (priceDisplay) {
+      priceDisplay.textContent = `$${minPrice.toLocaleString()} - $${maxPrice.toLocaleString()}`;
+    }
+    if (timeDisplay) {
+      timeDisplay.textContent = `${baseWeeks} - ${baseWeeks + 2} Weeks`;
+    }
+  }
+
+  if (platformSelect) platformSelect.addEventListener('change', calculate);
+  if (scopeSelect) scopeSelect.addEventListener('change', calculate);
+  if (timelineSelect) timelineSelect.addEventListener('change', calculate);
+  featureCheckboxes.forEach(cb => cb.addEventListener('change', calculate));
+
+  calculate();
+
+  if (applyBtn) {
+    applyBtn.addEventListener('click', () => {
+      const platformText = platformSelect.options[platformSelect.selectedIndex].text;
+      const scopeText = scopeSelect.options[scopeSelect.selectedIndex].text;
+      const estPrice = priceDisplay.textContent;
+      const estTime = timeDisplay.textContent;
+
+      const messageField = document.getElementById('contact-message');
+      const serviceField = document.getElementById('contact-service');
+
+      if (serviceField) {
+        serviceField.value = platformSelect.value === 'mobile' ? 'Mobile Application Development' : 
+                             platformSelect.value === 'billing' ? 'Billing Software Development' :
+                             'Custom Software Development';
+      }
+
+      if (messageField) {
+        messageField.value = `Hello Sachin, Roshani & Sahil,\n\nI evaluated a project using the Q COM Cost Estimator for ${platformText} (${scopeText}).\nEstimated Budget: ${estPrice}\nEstimated Delivery: ${estTime}.\n\nLet's schedule a consultation to begin!`;
+      }
+
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      showToast("Estimator values applied to contact form below! 🚀");
+    });
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 9. FAQ Accordion                                                           */
+/* -------------------------------------------------------------------------- */
+function initFAQ() {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const trigger = item.querySelector('.faq-trigger');
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+
+    if (trigger && content) {
+      trigger.addEventListener('click', () => {
+        const isOpen = content.classList.contains('open');
+
+        faqItems.forEach(other => {
+          const otherContent = other.querySelector('.faq-content');
+          const otherIcon = other.querySelector('.faq-icon');
+          if (otherContent) otherContent.classList.remove('open');
+          if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+        });
+
+        if (!isOpen) {
+          content.classList.add('open');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* 10. Contact Form (Direct Email qcomsoft@gmail.com & WhatsApp)              */
+/* -------------------------------------------------------------------------- */
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const successModal = document.getElementById('form-success-modal');
+  const successCloseBtn = document.getElementById('form-success-close');
+  const mailtoBtn = document.getElementById('form-mailto-btn');
+  const whatsappBtn = document.getElementById('form-whatsapp-btn');
+
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const phone = document.getElementById('contact-phone').value.trim();
+    const service = document.getElementById('contact-service').value;
+    const budget = document.getElementById('contact-budget').value;
+    const message = document.getElementById('contact-message').value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please enter your Name, Email, and Project Description.");
+      return;
+    }
+
+    const emailSubject = encodeURIComponent(`Project Enquiry from ${name} - Q COM Software`);
+    const emailBody = encodeURIComponent(
+      `Hello Q COM Software Team (Sachin, Roshani, Sahil),\n\n` +
+      `Client Name: ${name}\n` +
+      `Client Email: ${email}\n` +
+      `Phone/WhatsApp: ${phone || 'Not provided'}\n` +
+      `Selected Service: ${service}\n` +
+      `Budget Range: ${budget}\n\n` +
+      `Project Brief:\n${message}\n\n` +
+      `Submitted through Q COM Software Solutions Portal`
+    );
+    const mailtoUrl = `mailto:qcomsoft@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
+    const waText = encodeURIComponent(
+      `Hello Q COM Software Solutions,\nMy name is ${name}.\nI am contacting you regarding: ${service}.\nEmail: ${email}\nBudget: ${budget}\nBrief: ${message}`
+    );
+    const waUrl = `https://wa.me/?text=${waText}`;
+
+    if (mailtoBtn) mailtoBtn.href = mailtoUrl;
+    if (whatsappBtn) whatsappBtn.href = waUrl;
+
+    if (successModal) {
+      successModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    showToast("Enquiry submitted! You can now send directly to qcomsoft@gmail.com or WhatsApp.");
+    form.reset();
+  });
+
+  if (successCloseBtn && successModal) {
+    successCloseBtn.addEventListener('click', () => {
+      successModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* 11. Newsletter Form                                                        */
+/* -------------------------------------------------------------------------- */
+function initNewsletter() {
+  const form = document.getElementById('newsletter-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = form.querySelector('input[type="email"]').value;
+    if (email) {
+      showToast("Subscribed! You will receive tech updates from Q COM Software.");
+      form.reset();
+    }
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* 12. Back to Top                                                            */
+/* -------------------------------------------------------------------------- */
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.classList.remove('opacity-0', 'pointer-events-none');
+      btn.classList.add('opacity-100');
+    } else {
+      btn.classList.add('opacity-0', 'pointer-events-none');
+      btn.classList.remove('opacity-100');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* 13. Toast Notification Utility                                             */
+/* -------------------------------------------------------------------------- */
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toast-message');
+  if (!toast || !toastMsg) return;
+
+  toastMsg.textContent = msg;
+  toast.classList.add('show');
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 4500);
+}

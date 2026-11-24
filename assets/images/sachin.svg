@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sachinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="30" fill="url(#sachinGrad)" />
+  <circle cx="200" cy="150" r="65" fill="#f8fafc" opacity="0.95" />
+  <path d="M100 340 C100 240, 300 240, 300 340 Z" fill="#f8fafc" opacity="0.95" />
+  <circle cx="200" cy="150" r="55" fill="#1e293b" />
+  <path d="M120 340 C120 260, 280 260, 280 340 Z" fill="#0f172a" />
+  <polygon points="200,260 185,320 200,340 215,320" fill="url(#accent)" />
+  <polygon points="185,260 200,285 215,260 200,265" fill="#ffffff" />
+  <circle cx="340" cy="60" r="14" fill="#38bdf8" opacity="0.6" />
+  <circle cx="60" cy="340" r="8" fill="#38bdf8" opacity="0.4" />
+</svg>

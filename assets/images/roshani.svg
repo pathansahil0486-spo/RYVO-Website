@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="roshaniGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="50%" stop-color="#4338ca" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="pinkAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="30" fill="url(#roshaniGrad)" />
+  <circle cx="200" cy="150" r="65" fill="#f8fafc" opacity="0.95" />
+  <path d="M100 340 C100 240, 300 240, 300 340 Z" fill="#f8fafc" opacity="0.95" />
+  <path d="M135 155 C135 90, 265 90, 265 155 C265 210, 255 240, 250 250 C240 180, 220 120, 200 120 C180 120, 160 180, 150 250 C145 240, 135 210, 135 155 Z" fill="#0f172a" />
+  <circle cx="200" cy="155" r="48" fill="#312e81" opacity="0.3" />
+  <path d="M120 340 C120 265, 280 265, 280 340 Z" fill="#1e1b4b" />
+  <polygon points="200,265 175,340 225,340" fill="#f8fafc" />
+  <polygon points="200,290 190,340 210,340" fill="url(#pinkAccent)" />
+  <circle cx="330" cy="70" r="12" fill="#ec4899" opacity="0.6" />
+  <circle cx="70" cy="330" r="10" fill="#818cf8" opacity="0.4" />
+</svg>

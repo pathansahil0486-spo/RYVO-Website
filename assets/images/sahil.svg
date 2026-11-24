@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sahilGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="50%" stop-color="#0f766e" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="tealAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="30" fill="url(#sahilGrad)" />
+  <circle cx="200" cy="150" r="65" fill="#f8fafc" opacity="0.95" />
+  <path d="M100 340 C100 240, 300 240, 300 340 Z" fill="#f8fafc" opacity="0.95" />
+  <circle cx="200" cy="150" r="55" fill="#134e4a" />
+  <path d="M120 340 C120 260, 280 260, 280 340 Z" fill="#042f2e" />
+  <polygon points="200,260 170,340 230,340" fill="#f0fdfa" />
+  <polygon points="200,280 185,340 215,340" fill="url(#tealAccent)" />
+  <circle cx="340" cy="80" r="14" fill="#14b8a6" opacity="0.6" />
+  <circle cx="60" cy="320" r="8" fill="#38bdf8" opacity="0.5" />
+</svg>
