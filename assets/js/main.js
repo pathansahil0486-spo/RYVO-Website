@@ -1,11 +1,11 @@
 /**
- * Q COM Software Solutions - Interactive Core Scripts
- * Unified Signature Dark Tech Theme (Single Theme Mode)
- * Strictly Optimized for 320px+ Mobile, Tablet, and Desktop Devices
+ * Q COM Software Solutions - Professional Corporate Interactive Scripts
+ * Clean, Sharp High-Tech Corporate Theme
+ * Sticky Navbar at Top on Scroll & Optimized for 320px+ Mobile Devices
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNavigation();
+  initStickyNavbar();
   initScrollSpy();
   initCounters();
   initPortfolio();
@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* -------------------------------------------------------------------------- */
-/* 1. Navigation & Mobile Drawer (Touch-Optimized for Small Screens)          */
+/* 1. Sticky Top Navbar on Desktop & Mobile Scroll                            */
 /* -------------------------------------------------------------------------- */
-function initNavigation() {
+function initStickyNavbar() {
   const navbar = document.getElementById('navbar');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
@@ -29,18 +29,21 @@ function initNavigation() {
   const mobileBackdrop = document.getElementById('mobile-backdrop');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-  // Sticky Navbar Effect on Scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      navbar.classList.add('shadow-xl', 'py-2.5');
-      navbar.classList.remove('py-4');
+  // Keep navbar at top with subtle elevation on scroll
+  function handleScroll() {
+    if (window.scrollY > 15) {
+      navbar.classList.add('scrolled', 'py-2.5');
+      navbar.classList.remove('py-3.5', 'sm:py-4');
     } else {
-      navbar.classList.remove('shadow-xl', 'py-2.5');
-      navbar.classList.add('py-4');
+      navbar.classList.remove('scrolled', 'py-2.5');
+      navbar.classList.add('py-3.5', 'sm:py-4');
     }
-  }, { passive: true });
+  }
 
-  // Mobile Drawer Open / Close
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // Mobile Menu Drawer Handlers
   function openMobileMenu() {
     mobileMenu.classList.remove('translate-x-full');
     mobileBackdrop.classList.remove('hidden');
@@ -71,7 +74,7 @@ function initScrollSpy() {
 
   window.addEventListener('scroll', () => {
     let current = '';
-    const scrollPos = window.pageYOffset + 140;
+    const scrollPos = window.pageYOffset + 120;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -82,9 +85,9 @@ function initScrollSpy() {
     });
 
     navLinks.forEach(link => {
-      link.classList.remove('text-sky-400', 'font-semibold', 'active');
+      link.classList.remove('active', 'text-sky-600', 'font-semibold');
       if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('text-sky-400', 'font-semibold', 'active');
+        link.classList.add('active', 'text-sky-600', 'font-semibold');
       }
     });
   }, { passive: true });
@@ -141,12 +144,12 @@ function initPortfolio() {
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => {
-        b.classList.remove('bg-sky-500', 'text-white', 'shadow-md', 'shadow-sky-500/20');
-        b.classList.add('bg-slate-800/80', 'text-slate-300');
+        b.classList.remove('bg-sky-600', 'text-white', 'shadow-sm', 'border-sky-600');
+        b.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
       });
 
-      btn.classList.add('bg-sky-500', 'text-white', 'shadow-md', 'shadow-sky-500/20');
-      btn.classList.remove('bg-slate-800/80', 'text-slate-300');
+      btn.classList.add('bg-sky-600', 'text-white', 'shadow-sm', 'border-sky-600');
+      btn.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
 
       const filter = btn.getAttribute('data-filter');
 
@@ -163,7 +166,7 @@ function initPortfolio() {
           card.style.transform = 'scale(0.96)';
           setTimeout(() => {
             card.style.display = 'none';
-          }, 200);
+          }, 180);
         }
       });
     });
@@ -249,7 +252,7 @@ function initProjectModal() {
     stackContainer.innerHTML = '';
     data.stack.forEach(tech => {
       const span = document.createElement('span');
-      span.className = 'px-2.5 py-1 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full text-[11px] font-semibold';
+      span.className = 'px-2.5 py-1 bg-sky-50 text-sky-700 border border-sky-200 rounded-md text-xs font-semibold';
       span.textContent = tech;
       stackContainer.appendChild(span);
     });
@@ -257,8 +260,8 @@ function initProjectModal() {
     metricsContainer.innerHTML = '';
     data.metrics.forEach(metric => {
       const div = document.createElement('div');
-      div.className = 'flex items-center gap-2 text-xs sm:text-sm text-slate-300 font-medium';
-      div.innerHTML = `<i class="fas fa-check-circle text-emerald-400"></i> <span>${metric}</span>`;
+      div.className = 'flex items-center gap-2 text-xs sm:text-sm text-slate-700 font-medium';
+      div.innerHTML = `<i class="fas fa-check-circle text-emerald-600"></i> <span>${metric}</span>`;
       metricsContainer.appendChild(div);
     });
 
