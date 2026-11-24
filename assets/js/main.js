@@ -1,10 +1,10 @@
 /**
  * Q COM Software Solutions - Interactive Core Scripts
- * Compliant with Q COM Software Solutions SRS v1.0
+ * Unified Signature Dark Tech Theme (Single Theme Mode)
+ * Strictly Optimized for 320px+ Mobile, Tablet, and Desktop Devices
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
   initNavigation();
   initScrollSpy();
   initCounters();
@@ -19,41 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* -------------------------------------------------------------------------- */
-/* 1. Theme Toggle (Dark / Light Mode)                                        */
-/* -------------------------------------------------------------------------- */
-function initTheme() {
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
-  const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
-  const mobileThemeIcon = document.getElementById('mobile-theme-icon');
-  
-  const savedTheme = localStorage.getItem('qcom-theme') || 'dark';
-  applyTheme(savedTheme);
-
-  function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-      if (themeIcon) themeIcon.className = 'fas fa-sun text-amber-400 text-lg';
-      if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-sun text-amber-400 text-lg';
-    } else {
-      document.documentElement.classList.remove('dark');
-      if (themeIcon) themeIcon.className = 'fas fa-moon text-slate-700 text-lg';
-      if (mobileThemeIcon) mobileThemeIcon.className = 'fas fa-moon text-slate-700 text-lg';
-    }
-    localStorage.setItem('qcom-theme', theme);
-  }
-
-  function toggle() {
-    const isDark = document.documentElement.classList.contains('dark');
-    applyTheme(isDark ? 'light' : 'dark');
-  }
-
-  if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggle);
-  if (mobileThemeToggleBtn) mobileThemeToggleBtn.addEventListener('click', toggle);
-}
-
-/* -------------------------------------------------------------------------- */
-/* 2. Navigation & Mobile Drawer                                              */
+/* 1. Navigation & Mobile Drawer (Touch-Optimized for Small Screens)          */
 /* -------------------------------------------------------------------------- */
 function initNavigation() {
   const navbar = document.getElementById('navbar');
@@ -65,16 +31,16 @@ function initNavigation() {
 
   // Sticky Navbar Effect on Scroll
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('shadow-xl', 'py-3');
-      navbar.classList.remove('py-5');
+    if (window.scrollY > 30) {
+      navbar.classList.add('shadow-xl', 'py-2.5');
+      navbar.classList.remove('py-4');
     } else {
-      navbar.classList.remove('shadow-xl', 'py-3');
-      navbar.classList.add('py-5');
+      navbar.classList.remove('shadow-xl', 'py-2.5');
+      navbar.classList.add('py-4');
     }
-  });
+  }, { passive: true });
 
-  // Mobile Menu Drawer Handlers
+  // Mobile Drawer Open / Close
   function openMobileMenu() {
     mobileMenu.classList.remove('translate-x-full');
     mobileBackdrop.classList.remove('hidden');
@@ -97,7 +63,7 @@ function initNavigation() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 3. ScrollSpy Active Link Tracking                                          */
+/* 2. ScrollSpy Active Link Tracking                                          */
 /* -------------------------------------------------------------------------- */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
@@ -121,11 +87,11 @@ function initScrollSpy() {
         link.classList.add('text-sky-400', 'font-semibold', 'active');
       }
     });
-  });
+  }, { passive: true });
 }
 
 /* -------------------------------------------------------------------------- */
-/* 4. Animated Numerical Metric Counters                                      */
+/* 3. Numerical Metric Counters                                               */
 /* -------------------------------------------------------------------------- */
 function initCounters() {
   const counterElements = document.querySelectorAll('.counter-val');
@@ -135,8 +101,8 @@ function initCounters() {
     counterElements.forEach(counter => {
       const target = parseFloat(counter.getAttribute('data-target'));
       const isDecimal = target % 1 !== 0;
-      const duration = 1800;
-      const steps = 50;
+      const duration = 1600;
+      const steps = 40;
       const stepValue = target / steps;
       let current = 0;
 
@@ -159,14 +125,14 @@ function initCounters() {
         started = true;
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.2 });
 
   const statsSection = document.getElementById('stats-section');
   if (statsSection) observer.observe(statsSection);
 }
 
 /* -------------------------------------------------------------------------- */
-/* 5. Filterable Portfolio Cards                                              */
+/* 4. Filterable Portfolio Cards                                              */
 /* -------------------------------------------------------------------------- */
 function initPortfolio() {
   const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
@@ -175,19 +141,19 @@ function initPortfolio() {
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => {
-        b.classList.remove('bg-sky-500', 'text-white', 'shadow-lg', 'shadow-sky-500/20');
-        b.classList.add('bg-slate-800/60', 'text-slate-300');
+        b.classList.remove('bg-sky-500', 'text-white', 'shadow-md', 'shadow-sky-500/20');
+        b.classList.add('bg-slate-800/80', 'text-slate-300');
       });
 
-      btn.classList.add('bg-sky-500', 'text-white', 'shadow-lg', 'shadow-sky-500/20');
-      btn.classList.remove('bg-slate-800/60', 'text-slate-300');
+      btn.classList.add('bg-sky-500', 'text-white', 'shadow-md', 'shadow-sky-500/20');
+      btn.classList.remove('bg-slate-800/80', 'text-slate-300');
 
       const filter = btn.getAttribute('data-filter');
 
       projectCards.forEach(card => {
         const category = card.getAttribute('data-category');
         if (filter === 'all' || category === filter) {
-          card.style.display = 'block';
+          card.style.display = 'flex';
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'scale(1)';
@@ -197,7 +163,7 @@ function initPortfolio() {
           card.style.transform = 'scale(0.96)';
           setTimeout(() => {
             card.style.display = 'none';
-          }, 250);
+          }, 200);
         }
       });
     });
@@ -205,7 +171,7 @@ function initPortfolio() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 6. Portfolio Modal Quick View Data                                         */
+/* 5. Project Modal Details                                                   */
 /* -------------------------------------------------------------------------- */
 const projectsData = {
   1: {
@@ -283,7 +249,7 @@ function initProjectModal() {
     stackContainer.innerHTML = '';
     data.stack.forEach(tech => {
       const span = document.createElement('span');
-      span.className = 'px-3 py-1 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full text-xs font-semibold';
+      span.className = 'px-2.5 py-1 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded-full text-[11px] font-semibold';
       span.textContent = tech;
       stackContainer.appendChild(span);
     });
@@ -291,7 +257,7 @@ function initProjectModal() {
     metricsContainer.innerHTML = '';
     data.metrics.forEach(metric => {
       const div = document.createElement('div');
-      div.className = 'flex items-center gap-2 text-sm text-slate-300 font-medium';
+      div.className = 'flex items-center gap-2 text-xs sm:text-sm text-slate-300 font-medium';
       div.innerHTML = `<i class="fas fa-check-circle text-emerald-400"></i> <span>${metric}</span>`;
       metricsContainer.appendChild(div);
     });
@@ -318,7 +284,7 @@ function initProjectModal() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 7. Product Demo Enquiry Helper                                             */
+/* 6. Product Demo Enquiry Helper                                             */
 /* -------------------------------------------------------------------------- */
 function initProductEnquiry() {
   const demoBtns = document.querySelectorAll('.product-demo-btn');
@@ -345,7 +311,7 @@ function initProductEnquiry() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 8. Interactive Project Cost & Timeline Estimator                           */
+/* 7. Interactive Project Cost & Timeline Estimator                           */
 /* -------------------------------------------------------------------------- */
 function initCostEstimator() {
   const platformSelect = document.getElementById('calc-platform');
@@ -453,7 +419,7 @@ function initCostEstimator() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 9. FAQ Accordion                                                           */
+/* 8. FAQ Accordion                                                           */
 /* -------------------------------------------------------------------------- */
 function initFAQ() {
   const faqItems = document.querySelectorAll('.faq-item');
@@ -484,7 +450,7 @@ function initFAQ() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 10. Contact Form (Direct Email qcomsoft@gmail.com & WhatsApp)              */
+/* 9. Contact Form (Direct Email qcomsoft@gmail.com & WhatsApp)               */
 /* -------------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -549,7 +515,7 @@ function initContactForm() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 11. Newsletter Form                                                        */
+/* 10. Newsletter Form                                                        */
 /* -------------------------------------------------------------------------- */
 function initNewsletter() {
   const form = document.getElementById('newsletter-form');
@@ -566,21 +532,21 @@ function initNewsletter() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 12. Back to Top                                                            */
+/* 11. Back to Top                                                            */
 /* -------------------------------------------------------------------------- */
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
   if (!btn) return;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
+    if (window.scrollY > 350) {
       btn.classList.remove('opacity-0', 'pointer-events-none');
       btn.classList.add('opacity-100');
     } else {
       btn.classList.add('opacity-0', 'pointer-events-none');
       btn.classList.remove('opacity-100');
     }
-  });
+  }, { passive: true });
 
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -588,7 +554,7 @@ function initBackToTop() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* 13. Toast Notification Utility                                             */
+/* 12. Toast Notification Utility                                             */
 /* -------------------------------------------------------------------------- */
 function showToast(msg) {
   const toast = document.getElementById('toast');
@@ -600,5 +566,5 @@ function showToast(msg) {
 
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 4500);
+  }, 4000);
 }

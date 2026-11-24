@@ -2,13 +2,14 @@
 <html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Q COM Software Solutions | Smart Technology • Turning Ideas Into Reality</title>
   
   <!-- SEO & Social Meta Tags -->
   <meta name="description" content="Q COM Software Solutions - Leading IT and software development company specializing in Mobile Apps, Custom Web Apps, Billing Software, E-Commerce, UI/UX, and IT Consulting.">
   <meta name="keywords" content="Q COM Software Solutions, Software Development, Sachin Rathore, Roshani, Sahil Pathan, Mobile App Development, Billing Software, Custom Web Development, MERN Stack, Next.js, IT Consulting, qcomsoftware">
   <meta name="author" content="Q COM Software Solutions">
+  <meta name="theme-color" content="#070c18">
   <link rel="canonical" href="https://qcomsoftware.com">
 
   <!-- Open Graph / Facebook -->
@@ -43,11 +44,19 @@
     tailwind.config = {
       darkMode: 'class',
       theme: {
+        screens: {
+          'xs': '360px',
+          'sm': '640px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+        },
         extend: {
           colors: {
             brand: {
               navy: '#001a38',
-              deep: '#0a192f',
+              deep: '#070c18',
+              card: '#0f172a',
               blue: '#0284c7',
               cyan: '#38bdf8',
               accent: '#2563eb'
@@ -98,25 +107,26 @@
   }
   </script>
 </head>
-<body class="bg-slate-950 text-slate-100 transition-colors duration-300 relative selection:bg-sky-500 selection:text-white">
+<body class="bg-[#070c18] text-slate-100 overflow-x-hidden relative selection:bg-sky-500 selection:text-white antialiased">
 
   <!-- Ambient Glow Blobs -->
-  <div class="ambient-glow bg-sky-500/15 w-96 h-96 top-10 left-10"></div>
-  <div class="ambient-glow bg-indigo-600/15 w-[32rem] h-[32rem] top-96 right-10"></div>
-  <div class="ambient-glow bg-blue-500/10 w-80 h-80 bottom-40 left-1/3"></div>
+  <div class="ambient-glow bg-sky-500/15 w-72 sm:w-96 h-72 sm:h-96 top-5 left-0"></div>
+  <div class="ambient-glow bg-indigo-600/15 w-80 sm:w-[30rem] h-80 sm:h-[30rem] top-80 right-0"></div>
 
-  <!-- Announcement Bar -->
-  <header class="bg-gradient-to-r from-sky-900/60 via-brand-navy to-slate-900 border-b border-sky-500/20 py-2 px-4 text-xs font-medium text-slate-300">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-      <div class="flex items-center gap-2">
-        <span class="flex h-2 w-2 relative">
+  <!-- Announcement Bar (Responsive wrap for 320px) -->
+  <header class="bg-gradient-to-r from-sky-950 via-[#001a38] to-slate-900 border-b border-sky-500/20 py-2 px-3 sm:px-6 text-[11px] sm:text-xs font-medium text-slate-300">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1.5 sm:gap-4 text-center sm:text-left">
+      <div class="flex items-center justify-center gap-2">
+        <span class="flex h-2 w-2 relative flex-shrink-0">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
         </span>
-        <span><strong>Smart Technology | Turning Ideas Into Reality</strong> • Welcoming New Projects for 2026</span>
+        <span class="truncate max-w-[280px] xs:max-w-none">
+          <strong>Smart Technology | Turning Ideas Into Reality</strong> • Welcoming 2026 Projects
+        </span>
       </div>
-      <div class="flex items-center gap-4">
-        <a href="mailto:qcomsoft@gmail.com" class="hover:text-sky-400 transition-colors flex items-center gap-1.5">
+      <div class="flex items-center justify-center gap-3 text-[11px]">
+        <a href="mailto:qcomsoft@gmail.com" class="hover:text-sky-400 transition-colors flex items-center gap-1">
           <i class="fas fa-envelope text-sky-400"></i> qcomsoft@gmail.com
         </a>
         <a href="https://instagram.com/qcomsoftware" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition-colors flex items-center gap-1">
@@ -126,23 +136,23 @@
     </div>
   </header>
 
-  <!-- Navigation Bar (Sticky Glassmorphic) -->
-  <nav id="navbar" class="sticky top-0 z-50 glass-nav py-4 px-4 sm:px-6 lg:px-8 transition-all duration-300">
+  <!-- Navigation Bar (Sticky Glassmorphic, 320px Optimized) -->
+  <nav id="navbar" class="sticky top-0 z-50 glass-nav py-3 sm:py-4 px-3 sm:px-6 lg:px-8 transition-all duration-300">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
       <!-- Logo Branding -->
-      <a href="#home" class="flex items-center gap-3 group">
-        <div class="h-10 px-2 py-1 bg-white rounded-lg flex items-center shadow-md shadow-sky-500/10 group-hover:scale-105 transition-transform duration-300">
-          <img src="assets/images/logo-cropped.png" alt="Q COM Software Solutions" class="h-8 object-contain">
+      <a href="#home" class="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
+        <div class="h-8 sm:h-10 px-2 py-0.5 sm:py-1 bg-white rounded-lg flex items-center shadow-md shadow-sky-500/10 group-hover:scale-105 transition-transform duration-300">
+          <img src="assets/images/logo-cropped.png" alt="Q COM Software Solutions" class="h-6 sm:h-8 object-contain">
         </div>
-        <div class="hidden sm:block">
-          <span class="font-bold text-lg tracking-tight text-white group-hover:text-sky-400 transition-colors">Q COM</span>
-          <span class="text-xs block text-sky-400 font-semibold tracking-wider uppercase">Software Solutions</span>
+        <div class="block">
+          <span class="font-bold text-sm sm:text-lg tracking-tight text-white group-hover:text-sky-400 transition-colors">Q COM</span>
+          <span class="text-[10px] sm:text-xs block text-sky-400 font-semibold tracking-wider uppercase leading-none">Software</span>
         </div>
       </a>
 
       <!-- Desktop Navigation Menu -->
-      <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+      <div class="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium text-slate-300">
         <a href="#home" class="nav-link hover:text-sky-400 transition-colors active">Home</a>
         <a href="#about" class="nav-link hover:text-sky-400 transition-colors">About Us</a>
         <a href="#leadership" class="nav-link hover:text-sky-400 transition-colors">Leadership</a>
@@ -155,20 +165,15 @@
       </div>
 
       <!-- Action Buttons -->
-      <div class="flex items-center gap-3">
-        <!-- Theme Toggle Button -->
-        <button id="theme-toggle" aria-label="Toggle Theme" class="p-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 transition-all border border-slate-700/60">
-          <i id="theme-icon" class="fas fa-sun text-amber-400 text-lg"></i>
-        </button>
-
-        <!-- CTA Quote Button -->
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-sm font-semibold shadow-lg shadow-sky-500/25 transition-all duration-300 hover:scale-[1.02]">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- CTA Quote Button (Desktop & Tablet) -->
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-xs sm:text-sm font-semibold shadow-lg shadow-sky-500/25 transition-all duration-300 hover:scale-[1.02]">
           <span>Get Free Quote</span>
-          <i class="fas fa-arrow-right text-xs"></i>
+          <i class="fas fa-arrow-right text-[10px] sm:text-xs"></i>
         </a>
 
-        <!-- Mobile Menu Trigger -->
-        <button id="mobile-menu-btn" aria-label="Open Mobile Menu" class="lg:hidden p-2.5 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white transition-colors border border-slate-700/60">
+        <!-- Mobile Menu Trigger (Thumb-friendly 44px tap target) -->
+        <button id="mobile-menu-btn" aria-label="Open Mobile Menu" class="lg:hidden w-11 h-11 flex items-center justify-center rounded-lg bg-slate-800/90 text-slate-200 hover:text-white transition-colors border border-slate-700 active:scale-95">
           <i class="fas fa-bars text-lg"></i>
         </button>
       </div>
@@ -176,101 +181,119 @@
     </div>
   </nav>
 
-  <!-- Mobile Drawer Menu -->
-  <div id="mobile-backdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
-  <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-slate-900/95 backdrop-blur-xl border-l border-slate-800 z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-6 flex flex-col justify-between">
+  <!-- Mobile Drawer Menu (Touch-Optimized for 320px Screens) -->
+  <div id="mobile-backdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-[84vw] max-w-[320px] bg-slate-900/98 backdrop-blur-2xl border-l border-slate-800 z-50 transform translate-x-full transition-transform duration-300 ease-in-out p-5 flex flex-col justify-between overflow-y-auto">
     <div>
-      <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
         <div class="flex items-center gap-2">
-          <div class="h-8 px-2 py-0.5 bg-white rounded flex items-center">
-            <img src="assets/images/logo-cropped.png" alt="Q COM" class="h-6 object-contain">
+          <div class="h-7 px-2 py-0.5 bg-white rounded flex items-center">
+            <img src="assets/images/logo-cropped.png" alt="Q COM" class="h-5 object-contain">
           </div>
-          <span class="font-bold text-white text-sm">Q COM Software</span>
+          <div>
+            <span class="font-bold text-white text-xs block">Q COM Software</span>
+            <span class="text-[9px] text-sky-400 font-semibold block uppercase">Solutions</span>
+          </div>
         </div>
-        <button id="mobile-menu-close" aria-label="Close Menu" class="p-2 text-slate-400 hover:text-white">
-          <i class="fas fa-times text-lg"></i>
+        <button id="mobile-menu-close" aria-label="Close Menu" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:text-white">
+          <i class="fas fa-times text-base"></i>
         </button>
       </div>
 
-      <div class="flex flex-col gap-4 mt-6 text-base font-medium text-slate-300">
-        <a href="#home" class="mobile-nav-link hover:text-sky-400 transition-colors py-1">Home</a>
-        <a href="#about" class="mobile-nav-link hover:text-sky-400 transition-colors py-1">About Us</a>
-        <a href="#leadership" class="mobile-nav-link hover:text-sky-400 transition-colors py-1">Leadership</a>
-        <a href="#services" class="mobile-nav-link hover:text-sky-400 transition-colors py-1">Services</a>
-        <a href="#products" class="mobile-nav-link hover:text-sky-400 transition-colors py-1">Our Products</a>
-        <a href="#portfolio" class="mobile-nav-link hover:text-sky-400 transition-colors py-1">Portfolio</a>
-        <a href="#estimator" class="mobile-nav-link hover:text-sky-400 transition-colors py-1">Cost Estimator</a>
-        <a href="#faq" class="mobile-nav-link hover:text-sky-400 transition-colors py-1">FAQ</a>
-        <a href="#contact" class="mobile-nav-link hover:text-sky-400 transition-colors py-1">Contact Us</a>
+      <div class="flex flex-col gap-3 mt-5 text-sm font-medium text-slate-300">
+        <a href="#home" class="mobile-nav-link hover:text-sky-400 transition-colors py-1.5 flex items-center gap-3">
+          <i class="fas fa-home text-sky-400 w-5"></i> Home
+        </a>
+        <a href="#about" class="mobile-nav-link hover:text-sky-400 transition-colors py-1.5 flex items-center gap-3">
+          <i class="fas fa-building text-sky-400 w-5"></i> About Us
+        </a>
+        <a href="#leadership" class="mobile-nav-link hover:text-sky-400 transition-colors py-1.5 flex items-center gap-3">
+          <i class="fas fa-user-tie text-sky-400 w-5"></i> Leadership Team
+        </a>
+        <a href="#services" class="mobile-nav-link hover:text-sky-400 transition-colors py-1.5 flex items-center gap-3">
+          <i class="fas fa-layer-group text-sky-400 w-5"></i> Services
+        </a>
+        <a href="#products" class="mobile-nav-link hover:text-sky-400 transition-colors py-1.5 flex items-center gap-3">
+          <i class="fas fa-box-open text-sky-400 w-5"></i> Our Products
+        </a>
+        <a href="#portfolio" class="mobile-nav-link hover:text-sky-400 transition-colors py-1.5 flex items-center gap-3">
+          <i class="fas fa-briefcase text-sky-400 w-5"></i> Portfolio & Work
+        </a>
+        <a href="#estimator" class="mobile-nav-link hover:text-sky-400 transition-colors py-1.5 flex items-center gap-3">
+          <i class="fas fa-calculator text-sky-400 w-5"></i> Cost Estimator
+        </a>
+        <a href="#faq" class="mobile-nav-link hover:text-sky-400 transition-colors py-1.5 flex items-center gap-3">
+          <i class="fas fa-circle-question text-sky-400 w-5"></i> FAQ
+        </a>
+        <a href="#contact" class="mobile-nav-link hover:text-sky-400 transition-colors py-1.5 flex items-center gap-3">
+          <i class="fas fa-envelope text-sky-400 w-5"></i> Contact Us
+        </a>
       </div>
     </div>
 
-    <div class="pt-6 border-t border-slate-800 flex flex-col gap-4">
-      <div class="flex items-center justify-between">
-        <span class="text-sm text-slate-400">Appearance</span>
-        <button id="mobile-theme-toggle" class="p-2 rounded bg-slate-800 text-slate-300">
-          <i id="mobile-theme-icon" class="fas fa-sun text-amber-400"></i>
-        </button>
-      </div>
-      <a href="#contact" class="mobile-nav-link w-full py-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-center text-white font-semibold shadow-lg shadow-sky-500/20">
+    <div class="pt-5 border-t border-slate-800 flex flex-col gap-3">
+      <a href="https://wa.me/?text=Hello%20Q%20COM%20Software%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-lg bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 text-center font-semibold text-xs flex items-center justify-center gap-2">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+      <a href="#contact" class="mobile-nav-link w-full py-3 rounded-lg bg-sky-500 hover:bg-sky-400 text-center text-white font-semibold text-xs shadow-lg shadow-sky-500/25">
         Start Your Project
       </a>
     </div>
   </div>
 
-  <!-- Hero Section -->
-  <section id="home" class="relative pt-12 pb-20 md:pt-20 md:pb-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
+  <!-- Hero Section (Strictly Structured & Mobile 320px Friendly) -->
+  <section id="home" class="relative pt-8 pb-16 sm:pt-16 sm:pb-24 px-3 sm:px-6 lg:px-8 overflow-hidden">
     <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
         
         <!-- Left Hero Copy -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left z-10">
+        <div class="lg:col-span-7 space-y-4 sm:space-y-6 text-center lg:text-left z-10">
           
           <!-- Badge -->
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-500/10 border border-sky-500/25 text-sky-400 text-xs sm:text-sm font-semibold tracking-wide">
-            <i class="fas fa-rocket text-sky-400"></i>
-            <span>Smart Technology | Software Development & IT Solutions</span>
+          <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/25 text-sky-400 text-[11px] sm:text-xs font-semibold tracking-wide max-w-full">
+            <i class="fas fa-rocket text-sky-400 text-xs"></i>
+            <span class="truncate">Smart Technology | Turning Ideas Into Reality</span>
           </div>
 
           <!-- Main Catchphrase -->
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          <h1 class="hero-heading text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
             Turning Ideas Into Reality With 
-            <span class="gradient-text block">Smart Software Solutions</span>
+            <span class="gradient-text block mt-1">Smart Software Solutions</span>
           </h1>
 
           <!-- Subheading -->
-          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-            From custom billing engines and high-conversion mobile applications to scalable enterprise cloud architectures, <strong>Q COM Software Solutions</strong> empowers startups and enterprises to innovate at speed.
+          <p class="text-sm sm:text-base lg:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            From custom billing software with GST compliance to high-conversion mobile applications and scalable cloud architecture, <strong>Q COM Software Solutions</strong> empowers startups and enterprises to innovate at speed.
           </p>
 
-          <!-- CTAs -->
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-2">
-            <a href="#contact" class="btn-shimmer px-8 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold shadow-xl shadow-sky-500/25 transition-all duration-300 hover:scale-105 flex items-center gap-3">
+          <!-- CTAs (Full width on 320px screens for easy tap) -->
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-stretch sm:items-center pt-2">
+            <a href="#contact" class="btn-shimmer w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-xs sm:text-sm shadow-xl shadow-sky-500/25 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
               <span>Initiate Your Project</span>
-              <i class="fas fa-arrow-right"></i>
+              <i class="fas fa-arrow-right text-xs"></i>
             </a>
-            <a href="#services" class="px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold transition-all duration-300 hover:border-sky-500/50 flex items-center gap-2">
+            <a href="#services" class="w-full sm:w-auto px-5 sm:px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-xs sm:text-sm transition-all duration-300 hover:border-sky-500/50 flex items-center justify-center gap-2">
               <i class="fas fa-layer-group text-sky-400"></i>
               <span>Explore Services</span>
             </a>
-            <a href="#products" class="px-7 py-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold transition-all duration-300 hover:border-sky-500/50 flex items-center gap-2">
+            <a href="#products" class="w-full sm:w-auto px-5 sm:px-6 py-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-xs sm:text-sm transition-all duration-300 hover:border-sky-500/50 flex items-center justify-center gap-2">
               <i class="fas fa-box-open text-sky-400"></i>
               <span>Our Products</span>
             </a>
           </div>
 
-          <!-- Trust Badges -->
-          <div class="pt-6 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-400 font-medium">
-            <div class="flex items-center gap-2">
-              <i class="fas fa-shield-alt text-emerald-400 text-sm"></i>
+          <!-- Trust Badges (Centered wrap on small screens) -->
+          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-6 text-[11px] sm:text-xs text-slate-400 font-medium">
+            <div class="flex items-center gap-1.5">
+              <i class="fas fa-shield-alt text-emerald-400"></i>
               <span>100% Code Ownership</span>
             </div>
-            <div class="flex items-center gap-2">
-              <i class="fas fa-bolt text-amber-400 text-sm"></i>
+            <div class="flex items-center gap-1.5">
+              <i class="fas fa-bolt text-amber-400"></i>
               <span>Agile Sprint Delivery</span>
             </div>
-            <div class="flex items-center gap-2">
-              <i class="fas fa-headset text-sky-400 text-sm"></i>
+            <div class="flex items-center gap-1.5">
+              <i class="fas fa-headset text-sky-400"></i>
               <span>24/7 Dedicated Support</span>
             </div>
           </div>
@@ -278,54 +301,51 @@
         </div>
 
         <!-- Right Hero Visual / Interactive Hero Card -->
-        <div class="lg:col-span-5 relative z-10">
-          <div class="relative mx-auto max-w-md lg:max-w-none">
+        <div class="lg:col-span-5 relative z-10 w-full">
+          <div class="relative mx-auto max-w-md lg:max-w-none w-full">
             
-            <!-- Main Hero Tech Card -->
-            <div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden border border-slate-700/60 shadow-2xl">
-              <div class="flex items-center justify-between pb-5 border-b border-slate-800">
-                <div class="flex items-center gap-3">
-                  <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-                  <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-                  <span class="text-xs text-slate-400 font-mono pl-2">qcom-core-engine.v1</span>
+            <div class="glass-card rounded-2xl p-4 sm:p-7 relative overflow-hidden border border-slate-700/60 shadow-2xl">
+              <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                  <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                  <span class="text-[11px] text-slate-400 font-mono pl-1">qcom-core.v1</span>
                 </div>
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   Status: Operational
                 </span>
               </div>
 
-              <!-- Terminal / Code Simulation -->
-              <div class="mt-5 font-mono text-xs text-slate-300 space-y-2.5">
+              <!-- Terminal Simulation -->
+              <div class="mt-4 font-mono text-[11px] sm:text-xs text-slate-300 space-y-1.5 overflow-x-auto">
                 <p><span class="text-sky-400">const</span> <span class="text-indigo-400">qcomCompany</span> = {</p>
-                <p class="pl-4"><span class="text-slate-400">name:</span> <span class="text-emerald-300">"Q COM Software Solutions"</span>,</p>
-                <p class="pl-4"><span class="text-slate-400">slogan:</span> <span class="text-emerald-300">"Smart Technology | Turning Ideas Into Reality"</span>,</p>
-                <p class="pl-4"><span class="text-slate-400">founder:</span> <span class="text-amber-300">"Sachin Rathore"</span>,</p>
-                <p class="pl-4"><span class="text-slate-400">ceo:</span> <span class="text-amber-300">"Roshani"</span>,</p>
-                <p class="pl-4"><span class="text-slate-400">partner:</span> <span class="text-amber-300">"Sahil Pathan"</span>,</p>
-                <p class="pl-4"><span class="text-slate-400">contactEmail:</span> <span class="text-sky-300">"qcomsoft@gmail.com"</span>,</p>
-                <p class="pl-4"><span class="text-slate-400">specialties:</span> [<span class="text-cyan-300">"Mobile"</span>, <span class="text-cyan-300">"Web"</span>, <span class="text-cyan-300">"Billing Software"</span>, <span class="text-cyan-300">"Cloud"</span>]</p>
+                <p class="pl-3"><span class="text-slate-400">name:</span> <span class="text-emerald-300">"Q COM Software Solutions"</span>,</p>
+                <p class="pl-3"><span class="text-slate-400">founder:</span> <span class="text-amber-300">"Sachin Rathore"</span>,</p>
+                <p class="pl-3"><span class="text-slate-400">ceo:</span> <span class="text-amber-300">"Roshani"</span>,</p>
+                <p class="pl-3"><span class="text-slate-400">partner:</span> <span class="text-amber-300">"Sahil Pathan"</span>,</p>
+                <p class="pl-3"><span class="text-slate-400">email:</span> <span class="text-sky-300">"qcomsoft@gmail.com"</span>,</p>
+                <p class="pl-3"><span class="text-slate-400">specialties:</span> [<span class="text-cyan-300">"Mobile"</span>, <span class="text-cyan-300">"Web"</span>, <span class="text-cyan-300">"Billing"</span>]</p>
                 <p>};</p>
-                <p class="pt-2 text-slate-400">// Ready to build scalable digital infrastructure</p>
               </div>
 
-              <!-- Feature Highlights Grid -->
-              <div class="mt-6 pt-5 border-t border-slate-800 grid grid-cols-2 gap-3 text-left">
-                <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50">
-                  <div class="text-sky-400 text-lg mb-1"><i class="fas fa-file-invoice-dollar"></i></div>
-                  <div class="font-semibold text-white text-xs">Smart Billing Software</div>
-                  <div class="text-[11px] text-slate-400">GST, POS & Cloud Sync</div>
+              <!-- Quick Highlights -->
+              <div class="mt-4 pt-4 border-t border-slate-800 grid grid-cols-2 gap-2 sm:gap-3 text-left">
+                <div class="p-2.5 sm:p-3 rounded-xl bg-slate-800/50 border border-slate-700/50">
+                  <div class="text-sky-400 text-base mb-1"><i class="fas fa-file-invoice-dollar"></i></div>
+                  <div class="font-semibold text-white text-[11px] sm:text-xs">Smart Billing Engine</div>
+                  <div class="text-[10px] text-slate-400">GST, POS & Cloud</div>
                 </div>
-                <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50">
-                  <div class="text-cyan-400 text-lg mb-1"><i class="fas fa-mobile-screen"></i></div>
-                  <div class="font-semibold text-white text-xs">Mobile & Web Apps</div>
-                  <div class="text-[11px] text-slate-400">iOS, Android, React</div>
+                <div class="p-2.5 sm:p-3 rounded-xl bg-slate-800/50 border border-slate-700/50">
+                  <div class="text-cyan-400 text-base mb-1"><i class="fas fa-mobile-screen"></i></div>
+                  <div class="font-semibold text-white text-[11px] sm:text-xs">Mobile & Web Apps</div>
+                  <div class="text-[10px] text-slate-400">iOS, Android, React</div>
                 </div>
               </div>
 
               <!-- Live WhatsApp Quick Action Button -->
-              <div class="mt-5">
-                <a href="https://wa.me/?text=Hello%20Q%20COM%20Software%20Solutions%2C%20I%20would%20like%20to%20inquire%20about%20a%20project." target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/30 font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
+              <div class="mt-4">
+                <a href="https://wa.me/?text=Hello%20Q%20COM%20Software%20Solutions%2C%20I%20would%20like%20to%20inquire%20about%20a%20project." target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/30 font-semibold text-xs flex items-center justify-center gap-2 transition-colors">
                   <i class="fab fa-whatsapp text-sm"></i>
                   <span>Chat Directly on WhatsApp</span>
                 </a>
@@ -340,161 +360,155 @@
     </div>
   </section>
 
-  <!-- Statistics Counter Section (SRS Non-Functional Performance & Credibility) -->
-  <section id="stats-section" class="py-10 bg-slate-900/60 border-y border-slate-800/80 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+  <!-- Numerical Statistics Counter Section (320px Optimized Grid) -->
+  <section id="stats-section" class="py-8 sm:py-10 bg-slate-900/60 border-y border-slate-800/80 px-3 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 text-center">
       
-      <div class="p-4">
-        <div class="text-3xl sm:text-4xl font-extrabold text-sky-400 flex items-center justify-center">
+      <div class="p-2.5 sm:p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+        <div class="stat-number text-2xl xs:text-3xl sm:text-4xl font-extrabold text-sky-400 flex items-center justify-center">
           <span class="counter-val" data-target="50">0</span><span>+</span>
         </div>
-        <p class="mt-1 text-sm font-medium text-slate-300">Completed Projects</p>
-        <p class="text-xs text-slate-400">Delivered with high performance</p>
+        <p class="mt-1 text-xs sm:text-sm font-semibold text-slate-200">Completed Projects</p>
+        <p class="text-[10px] sm:text-xs text-slate-400">Delivered on schedule</p>
       </div>
 
-      <div class="p-4">
-        <div class="text-3xl sm:text-4xl font-extrabold text-sky-400 flex items-center justify-center">
+      <div class="p-2.5 sm:p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+        <div class="stat-number text-2xl xs:text-3xl sm:text-4xl font-extrabold text-sky-400 flex items-center justify-center">
           <span class="counter-val" data-target="99.8">0</span><span>%</span>
         </div>
-        <p class="mt-1 text-sm font-medium text-slate-300">Client Satisfaction</p>
-        <p class="text-xs text-slate-400">Verified client ratings</p>
+        <p class="mt-1 text-xs sm:text-sm font-semibold text-slate-200">Client Satisfaction</p>
+        <p class="text-[10px] sm:text-xs text-slate-400">Verified positive feedback</p>
       </div>
 
-      <div class="p-4">
-        <div class="text-3xl sm:text-4xl font-extrabold text-sky-400 flex items-center justify-center">
+      <div class="p-2.5 sm:p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+        <div class="stat-number text-2xl xs:text-3xl sm:text-4xl font-extrabold text-sky-400 flex items-center justify-center">
           <span class="counter-val" data-target="24">0</span><span>/7</span>
         </div>
-        <p class="mt-1 text-sm font-medium text-slate-300">Support & Maintenance</p>
-        <p class="text-xs text-slate-400">Always available for clients</p>
+        <p class="mt-1 text-xs sm:text-sm font-semibold text-slate-200">Support Availability</p>
+        <p class="text-[10px] sm:text-xs text-slate-400">Dedicated assistance</p>
       </div>
 
-      <div class="p-4">
-        <div class="text-3xl sm:text-4xl font-extrabold text-sky-400 flex items-center justify-center">
+      <div class="p-2.5 sm:p-4 rounded-xl bg-slate-900/40 border border-slate-800/60">
+        <div class="stat-number text-2xl xs:text-3xl sm:text-4xl font-extrabold text-sky-400 flex items-center justify-center">
           <span class="counter-val" data-target="100">0</span><span>%</span>
         </div>
-        <p class="mt-1 text-sm font-medium text-slate-300">On-Time Deployment</p>
-        <p class="text-xs text-slate-400">Vercel, Netlify & AWS ready</p>
+        <p class="mt-1 text-xs sm:text-sm font-semibold text-slate-200">On-Time Deployment</p>
+        <p class="text-[10px] sm:text-xs text-slate-400">Vercel & Netlify ready</p>
       </div>
 
     </div>
   </section>
 
   <!-- Tech Stack Ticker (Marquee) -->
-  <div class="py-6 overflow-hidden bg-slate-950/70 border-b border-slate-800/60">
-    <div class="marquee-track flex items-center gap-10 text-slate-400 text-sm font-semibold uppercase tracking-wider">
-      <span class="flex items-center gap-2"><i class="fab fa-react text-sky-400 text-lg"></i> React.js</span>
-      <span class="flex items-center gap-2"><i class="fab fa-node-js text-emerald-400 text-lg"></i> Node.js</span>
-      <span class="flex items-center gap-2"><i class="fab fa-python text-yellow-400 text-lg"></i> Python FastAPI</span>
-      <span class="flex items-center gap-2"><i class="fas fa-mobile text-sky-400 text-lg"></i> Flutter</span>
-      <span class="flex items-center gap-2"><i class="fab fa-aws text-amber-500 text-lg"></i> AWS Cloud</span>
-      <span class="flex items-center gap-2"><i class="fab fa-docker text-blue-400 text-lg"></i> Docker</span>
-      <span class="flex items-center gap-2"><i class="fas fa-database text-emerald-500 text-lg"></i> MongoDB</span>
-      <span class="flex items-center gap-2"><i class="fas fa-table text-indigo-400 text-lg"></i> PostgreSQL</span>
-      <span class="flex items-center gap-2"><i class="fab fa-figma text-pink-400 text-lg"></i> Figma UI/UX</span>
-      <span class="flex items-center gap-2"><i class="fab fa-js text-amber-400 text-lg"></i> TypeScript</span>
-      <!-- Duplicate for infinite smooth loop -->
-      <span class="flex items-center gap-2"><i class="fab fa-react text-sky-400 text-lg"></i> React.js</span>
-      <span class="flex items-center gap-2"><i class="fab fa-node-js text-emerald-400 text-lg"></i> Node.js</span>
-      <span class="flex items-center gap-2"><i class="fab fa-python text-yellow-400 text-lg"></i> Python FastAPI</span>
-      <span class="flex items-center gap-2"><i class="fas fa-mobile text-sky-400 text-lg"></i> Flutter</span>
-      <span class="flex items-center gap-2"><i class="fab fa-aws text-amber-500 text-lg"></i> AWS Cloud</span>
-      <span class="flex items-center gap-2"><i class="fab fa-docker text-blue-400 text-lg"></i> Docker</span>
-      <span class="flex items-center gap-2"><i class="fas fa-database text-emerald-500 text-lg"></i> MongoDB</span>
-      <span class="flex items-center gap-2"><i class="fas fa-table text-indigo-400 text-lg"></i> PostgreSQL</span>
-      <span class="flex items-center gap-2"><i class="fab fa-figma text-pink-400 text-lg"></i> Figma UI/UX</span>
-      <span class="flex items-center gap-2"><i class="fab fa-js text-amber-400 text-lg"></i> TypeScript</span>
+  <div class="py-4 sm:py-5 overflow-hidden bg-slate-950/80 border-b border-slate-800/60">
+    <div class="marquee-track flex items-center gap-8 text-slate-400 text-xs sm:text-sm font-semibold uppercase tracking-wider">
+      <span class="flex items-center gap-2"><i class="fab fa-react text-sky-400"></i> React.js</span>
+      <span class="flex items-center gap-2"><i class="fab fa-node-js text-emerald-400"></i> Node.js</span>
+      <span class="flex items-center gap-2"><i class="fab fa-python text-yellow-400"></i> Python</span>
+      <span class="flex items-center gap-2"><i class="fas fa-mobile text-sky-400"></i> Flutter</span>
+      <span class="flex items-center gap-2"><i class="fab fa-aws text-amber-500"></i> AWS Cloud</span>
+      <span class="flex items-center gap-2"><i class="fab fa-docker text-blue-400"></i> Docker</span>
+      <span class="flex items-center gap-2"><i class="fas fa-database text-emerald-500"></i> MongoDB</span>
+      <span class="flex items-center gap-2"><i class="fas fa-table text-indigo-400"></i> PostgreSQL</span>
+      <span class="flex items-center gap-2"><i class="fab fa-figma text-pink-400"></i> Figma</span>
+      <!-- Duplicate for infinite marquee loop -->
+      <span class="flex items-center gap-2"><i class="fab fa-react text-sky-400"></i> React.js</span>
+      <span class="flex items-center gap-2"><i class="fab fa-node-js text-emerald-400"></i> Node.js</span>
+      <span class="flex items-center gap-2"><i class="fab fa-python text-yellow-400"></i> Python</span>
+      <span class="flex items-center gap-2"><i class="fas fa-mobile text-sky-400"></i> Flutter</span>
+      <span class="flex items-center gap-2"><i class="fab fa-aws text-amber-500"></i> AWS Cloud</span>
+      <span class="flex items-center gap-2"><i class="fab fa-docker text-blue-400"></i> Docker</span>
+      <span class="flex items-center gap-2"><i class="fas fa-database text-emerald-500"></i> MongoDB</span>
+      <span class="flex items-center gap-2"><i class="fas fa-table text-indigo-400"></i> PostgreSQL</span>
+      <span class="flex items-center gap-2"><i class="fab fa-figma text-pink-400"></i> Figma</span>
     </div>
   </div>
 
   <!-- About Us Section (SRS Section 3: Vision, Mission & Goals) -->
-  <section id="about" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8">
+  <section id="about" class="py-14 sm:py-24 px-3 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">About Q COM Software Solutions</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+        <span class="text-sky-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">About Q COM Software Solutions</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">
           Engineering The Future of <span class="gradient-text">Digital Innovation</span>
         </h2>
-        <p class="text-slate-300 mt-4 text-base sm:text-lg">
+        <p class="text-slate-300 mt-3 text-xs sm:text-base">
           Q COM Software Solutions is a full-cycle technology firm committed to architecting resilient software products, intelligent billing frameworks, and scalable cloud architectures.
         </p>
       </div>
 
-      <!-- About Columns: Story & Mission/Vision -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 items-center">
         
         <!-- Story Card -->
-        <div class="glass-card rounded-2xl p-8 border border-slate-700/60 relative">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-xl">
+        <div class="glass-card rounded-2xl p-5 sm:p-8 border border-slate-700/60 relative">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-lg sm:text-xl flex-shrink-0">
               <i class="fas fa-building"></i>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-white">Our Corporate Identity</h3>
-              <p class="text-xs text-sky-400 font-medium">Smart Technology | Turning Ideas Into Reality</p>
+              <h3 class="text-lg sm:text-xl font-bold text-white">Our Corporate Identity</h3>
+              <p class="text-[11px] sm:text-xs text-sky-400 font-medium">Smart Technology | Turning Ideas Into Reality</p>
             </div>
           </div>
           
-          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+          <p class="text-slate-300 leading-relaxed text-xs sm:text-sm">
             Founded by <strong>Sachin Rathore</strong>, led by CEO <strong>Roshani</strong>, and driven by Managing Partner <strong>Sahil Pathan</strong>, Q COM Software Solutions was built on the conviction that high-performing technology should be robust, secure, and accessible.
           </p>
-          <p class="text-slate-300 leading-relaxed text-sm sm:text-base mt-4">
+          <p class="text-slate-300 leading-relaxed text-xs sm:text-sm mt-3">
             Whether building comprehensive Billing Software with GST compliance, native Android/iOS mobile applications, or high-load MERN stack enterprise solutions, our team delivers production-ready products on schedule.
           </p>
 
-          <div class="mt-8 pt-6 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
-            <div class="p-3 rounded-lg bg-slate-800/40">
-              <div class="text-sky-400 font-bold text-lg">100%</div>
-              <div class="text-xs text-slate-400">Verified Codebase</div>
+          <div class="mt-6 pt-5 border-t border-slate-800 grid grid-cols-3 gap-2 sm:gap-4 text-center">
+            <div class="p-2 sm:p-3 rounded-lg bg-slate-800/40">
+              <div class="text-sky-400 font-bold text-sm sm:text-lg">100%</div>
+              <div class="text-[10px] sm:text-xs text-slate-400">Verified Code</div>
             </div>
-            <div class="p-3 rounded-lg bg-slate-800/40">
-              <div class="text-sky-400 font-bold text-lg">Zero</div>
-              <div class="text-xs text-slate-400">Technical Debt</div>
+            <div class="p-2 sm:p-3 rounded-lg bg-slate-800/40">
+              <div class="text-sky-400 font-bold text-sm sm:text-lg">Zero</div>
+              <div class="text-[10px] sm:text-xs text-slate-400">Tech Debt</div>
             </div>
-            <div class="p-3 rounded-lg bg-slate-800/40">
-              <div class="text-sky-400 font-bold text-lg">Global</div>
-              <div class="text-xs text-slate-400">Delivery Reach</div>
+            <div class="p-2 sm:p-3 rounded-lg bg-slate-800/40">
+              <div class="text-sky-400 font-bold text-sm sm:text-lg">Global</div>
+              <div class="text-[10px] sm:text-xs text-slate-400">Reach</div>
             </div>
           </div>
         </div>
 
         <!-- Vision, Mission & Goals Cards -->
-        <div class="space-y-6">
+        <div class="space-y-4 sm:space-y-5">
           
-          <!-- Mission -->
-          <div class="glass-card rounded-2xl p-6 border border-slate-700/60 flex items-start gap-5">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex-shrink-0 flex items-center justify-center text-blue-400 text-xl">
+          <div class="glass-card rounded-2xl p-4 sm:p-6 border border-slate-700/60 flex items-start gap-4">
+            <div class="w-10 sm:w-11 h-10 sm:h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex-shrink-0 flex items-center justify-center text-blue-400 text-lg">
               <i class="fas fa-bullseye"></i>
             </div>
             <div>
-              <h4 class="text-lg font-bold text-white">Our Mission</h4>
-              <p class="text-slate-300 text-sm mt-1.5 leading-relaxed">
+              <h4 class="text-base sm:text-lg font-bold text-white">Our Mission</h4>
+              <p class="text-slate-300 text-xs sm:text-sm mt-1 leading-relaxed">
                 To engineer secure, scalable, and intuitive software applications that accelerate business efficiency, reduce operational overhead, and turn visionary concepts into market-defining reality.
               </p>
             </div>
           </div>
 
-          <!-- Vision -->
-          <div class="glass-card rounded-2xl p-6 border border-slate-700/60 flex items-start gap-5">
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex-shrink-0 flex items-center justify-center text-cyan-400 text-xl">
+          <div class="glass-card rounded-2xl p-4 sm:p-6 border border-slate-700/60 flex items-start gap-4">
+            <div class="w-10 sm:w-11 h-10 sm:h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex-shrink-0 flex items-center justify-center text-cyan-400 text-lg">
               <i class="fas fa-eye"></i>
             </div>
             <div>
-              <h4 class="text-lg font-bold text-white">Our Vision</h4>
-              <p class="text-slate-300 text-sm mt-1.5 leading-relaxed">
+              <h4 class="text-base sm:text-lg font-bold text-white">Our Vision</h4>
+              <p class="text-slate-300 text-xs sm:text-sm mt-1 leading-relaxed">
                 To be a globally recognized technology partner known for flawless execution, cutting-edge software architecture, and an unwavering commitment to client success.
               </p>
             </div>
           </div>
 
-          <!-- Working Approach -->
-          <div class="glass-card rounded-2xl p-6 border border-slate-700/60 flex items-start gap-5">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex-shrink-0 flex items-center justify-center text-emerald-400 text-xl">
+          <div class="glass-card rounded-2xl p-4 sm:p-6 border border-slate-700/60 flex items-start gap-4">
+            <div class="w-10 sm:w-11 h-10 sm:h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex-shrink-0 flex items-center justify-center text-emerald-400 text-lg">
               <i class="fas fa-handshake"></i>
             </div>
             <div>
-              <h4 class="text-lg font-bold text-white">Our Working Approach</h4>
-              <p class="text-slate-300 text-sm mt-1.5 leading-relaxed">
+              <h4 class="text-base sm:text-lg font-bold text-white">Our Working Approach</h4>
+              <p class="text-slate-300 text-xs sm:text-sm mt-1 leading-relaxed">
                 Agile sprints, daily communication checkpoints, automated testing pipelines, and complete transparency from discovery through post-launch evolution.
               </p>
             </div>
@@ -508,100 +522,100 @@
   </section>
 
   <!-- Leadership Section (SRS Section 3: Team Introduction) -->
-  <section id="leadership" class="py-20 bg-slate-900/50 border-y border-slate-800/80 px-4 sm:px-6 lg:px-8">
+  <section id="leadership" class="py-14 sm:py-24 bg-slate-900/50 border-y border-slate-800/80 px-3 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Executive Leadership</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+        <span class="text-sky-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">Executive Leadership</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">
           The Minds Guiding <span class="gradient-text">Q COM Software Solutions</span>
         </h2>
-        <p class="text-slate-300 mt-4 text-base">
+        <p class="text-slate-300 mt-3 text-xs sm:text-sm">
           Visionary leadership with a relentless focus on engineering excellence, customer trust, and strategic technology growth.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         
         <!-- 1. Sachin Rathore - Founder -->
-        <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/60 hover:border-sky-500/40 transition-all flex flex-col justify-between">
+        <div class="glass-card rounded-2xl p-5 sm:p-6 text-center border border-slate-700/60 hover:border-sky-500/40 transition-all flex flex-col justify-between">
           <div>
-            <div class="w-32 h-32 mx-auto rounded-2xl overflow-hidden shadow-xl mb-6 border-2 border-sky-500/30">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-2xl overflow-hidden shadow-xl mb-4 sm:mb-5 border-2 border-sky-500/30">
               <img src="assets/images/sachin.svg" alt="Sachin Rathore - Founder of Q COM Software Solutions" class="w-full h-full object-cover">
             </div>
-            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20 inline-block mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20 inline-block mb-1.5">
               Founder & Chief Strategist
             </span>
-            <h3 class="text-xl font-bold text-white">Sachin Rathore</h3>
-            <p class="text-xs text-slate-400 mb-4 font-mono">Founder of Q com software solutions</p>
-            <p class="text-slate-300 text-sm leading-relaxed">
+            <h3 class="text-lg sm:text-xl font-bold text-white">Sachin Rathore</h3>
+            <p class="text-[11px] text-slate-400 mb-3 font-mono">Founder of Q com software solutions</p>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
               Leading the company's visionary trajectory, Sachin drives strategic technological expansion, client partnership initiatives, and enterprise architecture roadmaps.
             </p>
           </div>
-          <div class="mt-6 pt-5 border-t border-slate-800 flex justify-center gap-3">
-            <a href="mailto:qcomsoft@gmail.com?subject=Inquiry%20for%20Sachin%20Rathore%20-%20Founder" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-sky-400 hover:bg-slate-700 transition-colors" title="Email Sachin">
+          <div class="mt-5 pt-4 border-t border-slate-800 flex justify-center gap-3">
+            <a href="mailto:qcomsoft@gmail.com?subject=Inquiry%20for%20Sachin%20Rathore%20-%20Founder" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-300 hover:text-sky-400 hover:bg-slate-700 transition-colors" title="Email Sachin">
               <i class="fas fa-envelope"></i>
             </a>
-            <a href="https://instagram.com/qcomsoftware" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-pink-400 hover:bg-slate-700 transition-colors" title="Instagram">
+            <a href="https://instagram.com/qcomsoftware" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-300 hover:text-pink-400 hover:bg-slate-700 transition-colors" title="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/?text=Hello%20Sachin%20Rathore%20(Founder%20Q%20COM%20Software)%2C%20I%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-emerald-400 hover:bg-slate-700 transition-colors" title="WhatsApp">
+            <a href="https://wa.me/?text=Hello%20Sachin%20Rathore%20(Founder%20Q%20COM%20Software)%2C%20I%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-300 hover:text-emerald-400 hover:bg-slate-700 transition-colors" title="WhatsApp">
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
 
         <!-- 2. Roshani - CEO -->
-        <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/60 hover:border-pink-500/40 transition-all flex flex-col justify-between">
+        <div class="glass-card rounded-2xl p-5 sm:p-6 text-center border border-slate-700/60 hover:border-pink-500/40 transition-all flex flex-col justify-between">
           <div>
-            <div class="w-32 h-32 mx-auto rounded-2xl overflow-hidden shadow-xl mb-6 border-2 border-pink-500/30">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-2xl overflow-hidden shadow-xl mb-4 sm:mb-5 border-2 border-pink-500/30">
               <img src="assets/images/roshani.svg" alt="Roshani - CEO of Q COM Software Solutions" class="w-full h-full object-cover">
             </div>
-            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-pink-500/10 text-pink-400 border border-pink-500/20 inline-block mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold bg-pink-500/10 text-pink-400 border border-pink-500/20 inline-block mb-1.5">
               Chief Executive Officer (CEO)
             </span>
-            <h3 class="text-xl font-bold text-white">Roshani</h3>
-            <p class="text-xs text-slate-400 mb-4 font-mono">CEO of Q com software solutions</p>
-            <p class="text-slate-300 text-sm leading-relaxed">
+            <h3 class="text-lg sm:text-xl font-bold text-white">Roshani</h3>
+            <p class="text-[11px] text-slate-400 mb-3 font-mono">CEO of Q com software solutions</p>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
               Directing global corporate operations, organizational excellence, client satisfaction standards, and ensuring Q COM delivers top-tier value to every partner.
             </p>
           </div>
-          <div class="mt-6 pt-5 border-t border-slate-800 flex justify-center gap-3">
-            <a href="mailto:qcomsoft@gmail.com?subject=Inquiry%20for%20Roshani%20-%20CEO" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-sky-400 hover:bg-slate-700 transition-colors" title="Email Roshani">
+          <div class="mt-5 pt-4 border-t border-slate-800 flex justify-center gap-3">
+            <a href="mailto:qcomsoft@gmail.com?subject=Inquiry%20for%20Roshani%20-%20CEO" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-300 hover:text-sky-400 hover:bg-slate-700 transition-colors" title="Email Roshani">
               <i class="fas fa-envelope"></i>
             </a>
-            <a href="https://instagram.com/qcomsoftware" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-pink-400 hover:bg-slate-700 transition-colors" title="Instagram">
+            <a href="https://instagram.com/qcomsoftware" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-300 hover:text-pink-400 hover:bg-slate-700 transition-colors" title="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/?text=Hello%20Roshani%20(CEO%20Q%20COM%20Software)%2C%20I%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-emerald-400 hover:bg-slate-700 transition-colors" title="WhatsApp">
+            <a href="https://wa.me/?text=Hello%20Roshani%20(CEO%20Q%20COM%20Software)%2C%20I%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-300 hover:text-emerald-400 hover:bg-slate-700 transition-colors" title="WhatsApp">
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
 
         <!-- 3. Sahil Pathan - Partner -->
-        <div class="glass-card rounded-2xl p-6 text-center border border-slate-700/60 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+        <div class="glass-card rounded-2xl p-5 sm:p-6 text-center border border-slate-700/60 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
           <div>
-            <div class="w-32 h-32 mx-auto rounded-2xl overflow-hidden shadow-xl mb-6 border-2 border-emerald-500/30">
+            <div class="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-2xl overflow-hidden shadow-xl mb-4 sm:mb-5 border-2 border-emerald-500/30">
               <img src="assets/images/sahil.svg" alt="Sahil Pathan - Partner at Q COM Software Solutions" class="w-full h-full object-cover">
             </div>
-            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 inline-block mb-2">
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 inline-block mb-1.5">
               Managing Partner & Tech Lead
             </span>
-            <h3 class="text-xl font-bold text-white">Sahil Pathan</h3>
-            <p class="text-xs text-slate-400 mb-4 font-mono">Partner at Q com software solutions</p>
-            <p class="text-slate-300 text-sm leading-relaxed">
+            <h3 class="text-lg sm:text-xl font-bold text-white">Sahil Pathan</h3>
+            <p class="text-[11px] text-slate-400 mb-3 font-mono">Partner at Q com software solutions</p>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
               Spearheading engineering execution, agile sprint management, full-stack tech stacks, and ensuring seamless deployment and code quality across all projects.
             </p>
           </div>
-          <div class="mt-6 pt-5 border-t border-slate-800 flex justify-center gap-3">
-            <a href="mailto:qcomsoft@gmail.com?subject=Inquiry%20for%20Sahil%20Pathan%20-%20Partner" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-sky-400 hover:bg-slate-700 transition-colors" title="Email Sahil">
+          <div class="mt-5 pt-4 border-t border-slate-800 flex justify-center gap-3">
+            <a href="mailto:qcomsoft@gmail.com?subject=Inquiry%20for%20Sahil%20Pathan%20-%20Partner" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-300 hover:text-sky-400 hover:bg-slate-700 transition-colors" title="Email Sahil">
               <i class="fas fa-envelope"></i>
             </a>
-            <a href="https://instagram.com/qcomsoftware" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-pink-400 hover:bg-slate-700 transition-colors" title="Instagram">
+            <a href="https://instagram.com/qcomsoftware" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-300 hover:text-pink-400 hover:bg-slate-700 transition-colors" title="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/?text=Hello%20Sahil%20Pathan%20(Partner%20Q%20COM%20Software)%2C%20I%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-emerald-400 hover:bg-slate-700 transition-colors" title="WhatsApp">
+            <a href="https://wa.me/?text=Hello%20Sahil%20Pathan%20(Partner%20Q%20COM%20Software)%2C%20I%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-300 hover:text-emerald-400 hover:bg-slate-700 transition-colors" title="WhatsApp">
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
@@ -612,160 +626,174 @@
     </div>
   </section>
 
-  <!-- Services Section (Strictly matching SRS Section 3 & FR-06) -->
-  <section id="services" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8">
+  <!-- Services Section (All 7 Services from SRS Section 3) -->
+  <section id="services" class="py-14 sm:py-24 px-3 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Our Core Expertise</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+        <span class="text-sky-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">Our Core Expertise</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">
           Enterprise Services Crafted for <span class="gradient-text">Exponential Growth</span>
         </h2>
-        <p class="text-slate-300 mt-4 text-base">
+        <p class="text-slate-300 mt-3 text-xs sm:text-sm">
           Every solution is architected with modern standards, secure backend logic, and user-centric interfaces.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
         
         <!-- 1. Mobile Application Development -->
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/60 relative group">
-          <div class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-sky-500/20 transition-all duration-300">
-            <i class="fas fa-mobile-screen-button"></i>
+        <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-700/60 relative group flex flex-col justify-between">
+          <div>
+            <div class="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-xl sm:text-2xl mb-4 group-hover:scale-105 transition-all">
+              <i class="fas fa-mobile-screen-button"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">Mobile Application Development</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              Native iOS & Android and cross-platform Flutter/React Native solutions built for sub-second responsiveness, offline data persistence, and fluid user experiences.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-5">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-sky-400"></i> iOS & Android Native SDKs</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-sky-400"></i> Cross-Platform Flutter & React Native</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-sky-400"></i> App Store & Play Store Deployment</li>
+            </ul>
           </div>
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors">Mobile Application Development</h3>
-          <p class="text-slate-300 text-sm leading-relaxed mb-6">
-            Native iOS & Android and cross-platform Flutter/React Native solutions built for sub-second responsiveness, offline data persistence, and fluid user experiences.
-          </p>
-          <ul class="text-xs text-slate-400 space-y-2 mb-6">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-sky-400"></i> iOS & Android Native SDKs</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-sky-400"></i> Cross-Platform Flutter & React Native</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-sky-400"></i> App Store & Play Store Publishing</li>
-          </ul>
           <a href="#contact" class="text-xs font-semibold text-sky-400 flex items-center gap-1.5 group-hover:underline">
             <span>Consult on Mobile Apps</span> <i class="fas fa-chevron-right text-[10px]"></i>
           </a>
         </div>
 
         <!-- 2. Website Development -->
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/60 relative group">
-          <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
-            <i class="fas fa-globe"></i>
+        <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-700/60 relative group flex flex-col justify-between">
+          <div>
+            <div class="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl sm:text-2xl mb-4 group-hover:scale-105 transition-all">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Website Development</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              From lightning-fast JAMstack corporate web portals to high-traffic full-stack Next.js and MERN applications with 100/100 Lighthouse performance.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-5">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Next.js 14, React & Tailwind CSS</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> SEO & Semantic Accessibility</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Vercel & Netlify Zero-Config Setup</li>
+            </ul>
           </div>
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Website Development</h3>
-          <p class="text-slate-300 text-sm leading-relaxed mb-6">
-            From lightning-fast JAMstack corporate web portals to high-traffic full-stack Next.js and MERN applications with 100/100 Lighthouse performance.
-          </p>
-          <ul class="text-xs text-slate-400 space-y-2 mb-6">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Next.js 14, React & Tailwind CSS</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> SEO & Semantic Accessibility</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Vercel & Netlify Zero-Config Setup</li>
-          </ul>
           <a href="#contact" class="text-xs font-semibold text-blue-400 flex items-center gap-1.5 group-hover:underline">
             <span>Build Your Web Platform</span> <i class="fas fa-chevron-right text-[10px]"></i>
           </a>
         </div>
 
         <!-- 3. Custom Software Development -->
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/60 relative group">
-          <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all duration-300">
-            <i class="fas fa-code"></i>
+        <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-700/60 relative group flex flex-col justify-between">
+          <div>
+            <div class="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl sm:text-2xl mb-4 group-hover:scale-105 transition-all">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Custom Software Development</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              Tailor-made business engines, cloud-native ERPs, microservices, and CRM workflows engineered specifically around your company’s unique operations.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-5">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> Microservices Architecture</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> REST & GraphQL APIs</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> Role-Based Permissions & RBAC</li>
+            </ul>
           </div>
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Custom Software Development</h3>
-          <p class="text-slate-300 text-sm leading-relaxed mb-6">
-            Tailor-made business engines, cloud-native ERPs, microservices, and CRM workflows engineered specifically around your company’s unique operations.
-          </p>
-          <ul class="text-xs text-slate-400 space-y-2 mb-6">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> Microservices & Distributed Architecture</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> High-Throughput REST & GraphQL APIs</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> Role-Based Permissions & Enterprise RBAC</li>
-          </ul>
           <a href="#contact" class="text-xs font-semibold text-indigo-400 flex items-center gap-1.5 group-hover:underline">
             <span>Explore Custom Software</span> <i class="fas fa-chevron-right text-[10px]"></i>
           </a>
         </div>
 
-        <!-- 4. Billing Software Development (SRS Explicit Requirement) -->
-        <div class="glass-card rounded-2xl p-7 border-2 border-sky-500/40 relative group bg-gradient-to-b from-sky-950/20 to-slate-900">
-          <span class="absolute top-4 right-4 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-sky-500/20 text-sky-400 border border-sky-500/30">
-            Specialized Offering
-          </span>
-          <div class="w-14 h-14 rounded-2xl bg-sky-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400 text-2xl mb-6 group-hover:scale-110 transition-all duration-300">
-            <i class="fas fa-file-invoice-dollar"></i>
+        <!-- 4. Billing Software Development (SRS Highlight) -->
+        <div class="glass-card rounded-2xl p-5 sm:p-7 border-2 border-sky-500/40 relative group bg-gradient-to-b from-sky-950/20 to-slate-900 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <div class="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-sky-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400 text-xl sm:text-2xl group-hover:scale-105 transition-all">
+                <i class="fas fa-file-invoice-dollar"></i>
+              </div>
+              <span class="px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-bold uppercase bg-sky-500/20 text-sky-400 border border-sky-500/30">
+                Specialized
+              </span>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">Billing Software Development</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              Enterprise-grade invoicing, POS solutions, and GST/VAT compliant billing systems engineered for retail stores, wholesalers, supermarkets, and service providers.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-1.5 mb-5">
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-400"></i> Instant Thermal & Laser Invoices</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-400"></i> Automatic GST / VAT Calculations</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-400"></i> Barcode Scanners & Inventory Sync</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-400"></i> WhatsApp Automated Bill Dispatch</li>
+            </ul>
           </div>
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">Billing Software Development</h3>
-          <p class="text-slate-300 text-sm leading-relaxed mb-6">
-            Enterprise-grade invoicing, POS solutions, and GST/VAT compliant billing systems engineered for retail stores, wholesalers, supermarkets, and service providers.
-          </p>
-          <ul class="text-xs text-slate-300 space-y-2 mb-6">
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-400"></i> Instant Thermal & Laser Invoice Printing</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-400"></i> Automatic GST/VAT Tax Calculators</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-400"></i> Real-Time Inventory & Barcode Scanners</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check-circle text-sky-400"></i> Cloud Backup & WhatsApp Invoice Dispatch</li>
-          </ul>
           <a href="#contact" class="text-xs font-semibold text-sky-400 flex items-center gap-1.5 group-hover:underline">
             <span>Request Billing Demo</span> <i class="fas fa-chevron-right text-[10px]"></i>
           </a>
         </div>
 
         <!-- 5. UI/UX Design -->
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/60 relative group">
-          <div class="w-14 h-14 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-pink-500/20 transition-all duration-300">
-            <i class="fas fa-bezier-curve"></i>
+        <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-700/60 relative group flex flex-col justify-between">
+          <div>
+            <div class="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-xl sm:text-2xl mb-4 group-hover:scale-105 transition-all">
+              <i class="fas fa-bezier-curve"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors">UI/UX Design</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              Human-centered interfaces, Figma design systems, wireframes, and interactive prototypes built to maximize user conversion and reduce cognitive friction.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-5">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> Interactive Clickable Figma Prototypes</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> Design Systems & Styleguides</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> User Journey Mapping & UX Audits</li>
+            </ul>
           </div>
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors">UI/UX Design</h3>
-          <p class="text-slate-300 text-sm leading-relaxed mb-6">
-            Human-centered interfaces, Figma design systems, wireframes, and interactive prototypes built to maximize user conversion and reduce cognitive friction.
-          </p>
-          <ul class="text-xs text-slate-400 space-y-2 mb-6">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> Interactive Clickable Figma Prototypes</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> Enterprise Design Systems & Styleguides</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400"></i> User Journey Mapping & UX Audits</li>
-          </ul>
           <a href="#contact" class="text-xs font-semibold text-pink-400 flex items-center gap-1.5 group-hover:underline">
             <span>Explore Design Services</span> <i class="fas fa-chevron-right text-[10px]"></i>
           </a>
         </div>
 
         <!-- 6. E-Commerce Solutions -->
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/60 relative group">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all duration-300">
-            <i class="fas fa-cart-shopping"></i>
+        <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-700/60 relative group flex flex-col justify-between">
+          <div>
+            <div class="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-xl sm:text-2xl mb-4 group-hover:scale-105 transition-all">
+              <i class="fas fa-cart-shopping"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">E-Commerce Solutions</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              High-converting digital storefronts, multi-vendor marketplaces, payment gateway integrations, and headless commerce platforms designed for scale.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-1.5 mb-5">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-400"></i> Stripe, Razorpay & Card Gateways</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-400"></i> Multi-Currency & Instant Checkout</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-amber-400"></i> Automated Logistics Tracking</li>
+            </ul>
           </div>
-          <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">E-Commerce Solutions</h3>
-          <p class="text-slate-300 text-sm leading-relaxed mb-6">
-            High-converting digital storefronts, multi-vendor marketplaces, payment gateway integrations, and headless commerce platforms designed for scale.
-          </p>
-          <ul class="text-xs text-slate-400 space-y-2 mb-6">
-            <li class="flex items-center gap-2"><i class="fas fa-check text-amber-400"></i> Stripe, Razorpay & PayPal Integrations</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-amber-400"></i> Multi-Currency & Omnichannel Checkout</li>
-            <li class="flex items-center gap-2"><i class="fas fa-check text-amber-400"></i> Automated Order Logistics & Tracking</li>
-          </ul>
           <a href="#contact" class="text-xs font-semibold text-amber-400 flex items-center gap-1.5 group-hover:underline">
             <span>Launch E-Commerce Store</span> <i class="fas fa-chevron-right text-[10px]"></i>
           </a>
         </div>
 
         <!-- 7. IT Consulting and Support -->
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/60 relative group md:col-span-2 lg:col-span-3">
-          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div class="flex items-start gap-5">
-              <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl flex-shrink-0">
+        <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-700/60 relative group md:col-span-2 lg:col-span-3">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-6">
+            <div class="flex items-start gap-3 sm:gap-5">
+              <div class="w-12 sm:w-14 h-12 sm:h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl sm:text-2xl flex-shrink-0">
                 <i class="fas fa-screwdriver-wrench"></i>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-white mb-1">IT Consulting and Support</h3>
-                <p class="text-slate-300 text-sm max-w-3xl leading-relaxed">
+                <h3 class="text-lg sm:text-xl font-bold text-white mb-1">IT Consulting and Support</h3>
+                <p class="text-slate-300 text-xs sm:text-sm max-w-3xl leading-relaxed">
                   Strategic cloud migration (AWS/Azure), infrastructure cost optimization, codebase security audits, bug remediation, and SLA-backed 24/7 technical monitoring.
                 </p>
-                <div class="flex flex-wrap gap-4 mt-3 text-xs text-slate-400">
-                  <span class="flex items-center gap-1.5"><i class="fas fa-shield-halved text-emerald-400"></i> Security Auditing</span>
-                  <span class="flex items-center gap-1.5"><i class="fas fa-server text-emerald-400"></i> Cloud Infrastructure</span>
-                  <span class="flex items-center gap-1.5"><i class="fas fa-clock text-emerald-400"></i> 24/7 Incident Response</span>
+                <div class="flex flex-wrap gap-2.5 sm:gap-4 mt-2.5 text-[11px] sm:text-xs text-slate-400">
+                  <span class="flex items-center gap-1"><i class="fas fa-shield-halved text-emerald-400"></i> Security Audits</span>
+                  <span class="flex items-center gap-1"><i class="fas fa-server text-emerald-400"></i> Cloud Setup</span>
+                  <span class="flex items-center gap-1"><i class="fas fa-clock text-emerald-400"></i> 24/7 SLA</span>
                 </div>
               </div>
             </div>
-            <a href="#contact" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold border border-slate-700 transition-colors whitespace-nowrap">
+            <a href="#contact" class="w-full md:w-auto text-center px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs sm:text-sm font-semibold border border-slate-700 transition-colors whitespace-nowrap">
               Get IT Advisory
             </a>
           </div>
@@ -776,185 +804,185 @@
     </div>
   </section>
 
-  <!-- Our Products Section (Strictly matching SRS Section 3: "Our Products" & FR-07) -->
-  <section id="products" class="py-20 bg-slate-900/60 border-y border-slate-800/80 px-4 sm:px-6 lg:px-8">
+  <!-- Our Products Section (SRS Section 3 & FR-07) -->
+  <section id="products" class="py-14 sm:py-24 bg-slate-900/60 border-y border-slate-800/80 px-3 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Proprietary Software Systems</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+        <span class="text-sky-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">Proprietary Software Systems</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">
           Company-Developed <span class="gradient-text">Flagship Products</span>
         </h2>
-        <p class="text-slate-300 mt-4 text-base">
-          As specified in our Software Requirements Specification, explore our ready-to-deploy software packages designed to solve critical business bottlenecks.
+        <p class="text-slate-300 mt-3 text-xs sm:text-sm">
+          As specified in our Software Requirements Specification, explore our ready-to-deploy software packages.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         
         <!-- Product 1: Q-Bill Pro -->
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/70 hover:border-sky-500/40 transition-all flex flex-col justify-between">
+        <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-700/70 hover:border-sky-500/40 transition-all flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-bold uppercase bg-sky-500/10 text-sky-400 border border-sky-500/20">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-sky-500/10 text-sky-400 border border-sky-500/20">
                 Flagship Invoicing
               </span>
-              <span class="text-xs text-slate-400 font-mono">v3.4 Production</span>
+              <span class="text-[10px] sm:text-xs text-slate-400 font-mono">v3.4 Production</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Q-Bill Pro Enterprise</h3>
-            <p class="text-sky-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">Q-Bill Pro Enterprise</h3>
+            <p class="text-sky-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-3">
               Smart Billing & GST Management Suite
             </p>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Complete point-of-sale (POS) and inventory control engine. Generates verified GST/VAT tax invoices in 0.2 seconds, syncs across multi-branch warehouses, and dispatches automated WhatsApp payment receipts directly to customer devices.
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              Complete POS and inventory control engine. Generates verified GST/VAT invoices in 0.2 seconds, syncs multi-branch stocks, and dispatches automated WhatsApp payment receipts.
             </p>
             
-            <div class="grid grid-cols-2 gap-3 mb-6 text-xs text-slate-300">
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-barcode text-sky-400"></i> Barcode & QR Scanner
+            <div class="grid grid-cols-2 gap-2 mb-5 text-[11px] sm:text-xs text-slate-300">
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-barcode text-sky-400"></i> Barcode & QR
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fab fa-whatsapp text-emerald-400"></i> WhatsApp Invoice Push
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fab fa-whatsapp text-emerald-400"></i> WhatsApp Bills
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-wifi text-amber-400"></i> Offline-First Sync
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-wifi text-amber-400"></i> Offline Sync
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-file-pdf text-red-400"></i> E-Way & E-Invoice API
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-file-pdf text-red-400"></i> E-Way & GST
               </div>
             </div>
           </div>
 
-          <div class="pt-5 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400">For Retail, Wholesale, Supermarkets</span>
-            <button class="product-demo-btn px-4 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-white font-semibold text-xs transition-colors flex items-center gap-2" data-product="Q-Bill Pro Enterprise">
-              <span>Request Product Demo</span>
+          <div class="pt-4 border-t border-slate-800 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-3">
+            <span class="text-[11px] text-slate-400">Retail, Wholesale, Stores</span>
+            <button class="product-demo-btn px-4 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2" data-product="Q-Bill Pro Enterprise">
+              <span>Request Live Demo</span>
               <i class="fas fa-arrow-right text-[10px]"></i>
             </button>
           </div>
         </div>
 
         <!-- Product 2: Q-Commerce Engine -->
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/70 hover:border-amber-500/40 transition-all flex flex-col justify-between">
+        <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-700/70 hover:border-amber-500/40 transition-all flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-bold uppercase bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                E-Commerce Platform
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                E-Commerce Suite
               </span>
-              <span class="text-xs text-slate-400 font-mono">Headless Architecture</span>
+              <span class="text-[10px] sm:text-xs text-slate-400 font-mono">Headless</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Q-Commerce Engine</h3>
-            <p class="text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
-              Omnichannel Multi-Vendor Marketplace
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">Q-Commerce Engine</h3>
+            <p class="text-amber-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-3">
+              Multi-Vendor Marketplace Architecture
             </p>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              A high-performance digital commerce framework supporting millions of SKU variations, instant cart-to-checkout flows, dynamic couponing, live courier tracking, and multi-currency global settlement gateways.
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              A high-performance digital commerce framework supporting thousands of SKU variations, instant cart-to-checkout flows, dynamic couponing, and multi-currency global settlement gateways.
             </p>
             
-            <div class="grid grid-cols-2 gap-3 mb-6 text-xs text-slate-300">
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
+            <div class="grid grid-cols-2 gap-2 mb-5 text-[11px] sm:text-xs text-slate-300">
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
                 <i class="fas fa-credit-card text-amber-400"></i> Multi-Gateways
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
                 <i class="fas fa-users-gear text-sky-400"></i> Vendor Portal
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
                 <i class="fas fa-bolt text-yellow-400"></i> sub-400ms Loads
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-truck-fast text-emerald-400"></i> Real-Time Shipping
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-truck-fast text-emerald-400"></i> Courier Sync
               </div>
             </div>
           </div>
 
-          <div class="pt-5 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400">B2B, B2C, D2C Commerce Brands</span>
-            <button class="product-demo-btn px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-semibold text-xs transition-colors flex items-center gap-2" data-product="Q-Commerce Engine">
-              <span>Request Product Demo</span>
+          <div class="pt-4 border-t border-slate-800 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-3">
+            <span class="text-[11px] text-slate-400">B2B, B2C, Brands</span>
+            <button class="product-demo-btn px-4 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2" data-product="Q-Commerce Engine">
+              <span>Request Live Demo</span>
               <i class="fas fa-arrow-right text-[10px]"></i>
             </button>
           </div>
         </div>
 
         <!-- Product 3: Q-Track Telematics -->
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/70 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+        <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-700/70 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-bold uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 Logistics & IoT
               </span>
-              <span class="text-xs text-slate-400 font-mono">Live Telemetry</span>
+              <span class="text-[10px] sm:text-xs text-slate-400 font-mono">Live Telemetry</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Q-Track Telematics</h3>
-            <p class="text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">Q-Track Telematics</h3>
+            <p class="text-emerald-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-3">
               Real-Time Fleet & Logistics GPS Tracker
             </p>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Industrial fleet management platform providing live map telemetry, geofencing violations, driver performance analytics, automated fuel theft alarms, and predictive truck maintenance scheduling.
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+              Industrial fleet management platform providing live map telemetry, geofencing violations, driver performance analytics, automated fuel theft alarms, and predictive truck maintenance.
             </p>
             
-            <div class="grid grid-cols-2 gap-3 mb-6 text-xs text-slate-300">
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-location-crosshairs text-emerald-400"></i> 1-Second GPS Polling
+            <div class="grid grid-cols-2 gap-2 mb-5 text-[11px] sm:text-xs text-slate-300">
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-location-crosshairs text-emerald-400"></i> GPS Polling
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-gas-pump text-amber-400"></i> Fuel Level Telemetry
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-gas-pump text-amber-400"></i> Fuel Telemetry
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-bell text-red-400"></i> Geofence Alerts
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-bell text-red-400"></i> Geofence Alert
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-mobile text-sky-400"></i> Driver Mobile App
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-mobile text-sky-400"></i> Driver App
               </div>
             </div>
           </div>
 
-          <div class="pt-5 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Logistics, Supply Chains, Cabs</span>
-            <button class="product-demo-btn px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-white font-semibold text-xs transition-colors flex items-center gap-2" data-product="Q-Track Telematics">
-              <span>Request Product Demo</span>
+          <div class="pt-4 border-t border-slate-800 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-3">
+            <span class="text-[11px] text-slate-400">Logistics, Fleet, Cabs</span>
+            <button class="product-demo-btn px-4 py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2" data-product="Q-Track Telematics">
+              <span>Request Live Demo</span>
               <i class="fas fa-arrow-right text-[10px]"></i>
             </button>
           </div>
         </div>
 
         <!-- Product 4: Q-Desk CRM -->
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/70 hover:border-indigo-500/40 transition-all flex flex-col justify-between">
+        <div class="glass-card rounded-2xl p-5 sm:p-7 border border-slate-700/70 hover:border-indigo-500/40 transition-all flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-bold uppercase bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                Customer Experience
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                Customer Support
               </span>
-              <span class="text-xs text-slate-400 font-mono">AI Support CRM</span>
+              <span class="text-[10px] sm:text-xs text-slate-400 font-mono">Omnichannel</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Q-Desk Omnichannel</h3>
-            <p class="text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">Q-Desk Omnichannel</h3>
+            <p class="text-indigo-400 text-[11px] sm:text-xs font-semibold uppercase tracking-wider mb-3">
               AI Support Helpdesk & Client Ticket Vault
             </p>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
               Unified support inbox connecting WhatsApp, Email, Web Chat, and Phone queues into a single collaborative agent workstation with automated canned responses and SLA tracking.
             </p>
             
-            <div class="grid grid-cols-2 gap-3 mb-6 text-xs text-slate-300">
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-inbox text-indigo-400"></i> Unified Shared Inbox
+            <div class="grid grid-cols-2 gap-2 mb-5 text-[11px] sm:text-xs text-slate-300">
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-inbox text-indigo-400"></i> Unified Inbox
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-robot text-sky-400"></i> AI Smart Summaries
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-robot text-sky-400"></i> AI Summaries
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-stopwatch text-amber-400"></i> SLA Breach Guards
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-stopwatch text-amber-400"></i> SLA Guards
               </div>
-              <div class="p-2.5 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-2">
-                <i class="fas fa-chart-line text-emerald-400"></i> CSAT Analytics
+              <div class="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50 flex items-center gap-1.5">
+                <i class="fas fa-chart-line text-emerald-400"></i> CSAT Metrics
               </div>
             </div>
           </div>
 
-          <div class="pt-5 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400">SaaS, Enterprise Support Teams</span>
-            <button class="product-demo-btn px-4 py-2 rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white font-semibold text-xs transition-colors flex items-center gap-2" data-product="Q-Desk Omnichannel">
-              <span>Request Product Demo</span>
+          <div class="pt-4 border-t border-slate-800 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-3">
+            <span class="text-[11px] text-slate-400">SaaS, Enterprise Teams</span>
+            <button class="product-demo-btn px-4 py-2.5 rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2" data-product="Q-Desk Omnichannel">
+              <span>Request Live Demo</span>
               <i class="fas fa-arrow-right text-[10px]"></i>
             </button>
           </div>
@@ -965,59 +993,59 @@
     </div>
   </section>
 
-  <!-- Portfolio Section (Strictly matching SRS Section 3: Portfolio & FR-07) -->
-  <section id="portfolio" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8">
+  <!-- Portfolio Section (SRS Section 3 & FR-07) -->
+  <section id="portfolio" class="py-14 sm:py-24 px-3 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Case Studies & Track Record</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+      <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+        <span class="text-sky-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">Case Studies & Track Record</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">
           Featured Projects & <span class="gradient-text">Client Successes</span>
         </h2>
-        <p class="text-slate-300 mt-4 text-base">
-          Explore real-world software platforms, mobile applications, and billing implementations engineered by Q COM Software Solutions.
+        <p class="text-slate-300 mt-3 text-xs sm:text-sm">
+          Explore real-world software platforms, mobile applications, and billing implementations.
         </p>
 
-        <!-- Filter Tabs -->
-        <div class="flex flex-wrap items-center justify-center gap-2.5 mt-8">
-          <button class="portfolio-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-sky-500 text-white shadow-lg shadow-sky-500/20" data-filter="all">
-            All Projects
+        <!-- Filter Tabs (Wrapping neatly for mobile) -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mt-6">
+          <button class="portfolio-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-semibold transition-all bg-sky-500 text-white shadow-md shadow-sky-500/20" data-filter="all">
+            All Work
           </button>
-          <button class="portfolio-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-300 hover:bg-slate-700" data-filter="web">
+          <button class="portfolio-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-semibold transition-all bg-slate-800/80 text-slate-300 hover:bg-slate-700" data-filter="web">
             Web & Full-Stack
           </button>
-          <button class="portfolio-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-300 hover:bg-slate-700" data-filter="mobile">
+          <button class="portfolio-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-semibold transition-all bg-slate-800/80 text-slate-300 hover:bg-slate-700" data-filter="mobile">
             Mobile Apps
           </button>
-          <button class="portfolio-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-300 hover:bg-slate-700" data-filter="billing">
-            Billing Software
+          <button class="portfolio-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-semibold transition-all bg-slate-800/80 text-slate-300 hover:bg-slate-700" data-filter="billing">
+            Billing POS
           </button>
-          <button class="portfolio-filter-btn px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-800/60 text-slate-300 hover:bg-slate-700" data-filter="cloud">
-            Enterprise & Cloud
+          <button class="portfolio-filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-semibold transition-all bg-slate-800/80 text-slate-300 hover:bg-slate-700" data-filter="cloud">
+            Enterprise Cloud
           </button>
         </div>
       </div>
 
       <!-- Projects Grid -->
-      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
         
         <!-- Project 1 -->
         <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-700/60 transition-all flex flex-col justify-between" data-category="cloud">
-          <div class="p-6">
+          <div class="p-5 sm:p-6">
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-semibold text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-md border border-sky-500/20">Cloud ERP</span>
-              <span class="text-xs text-slate-400 font-mono">React • Node • AWS</span>
+              <span class="text-[11px] font-semibold text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20">Cloud ERP</span>
+              <span class="text-[11px] text-slate-400 font-mono">React • Node • AWS</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">ApexFlow Cloud ERP</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">ApexFlow Cloud ERP</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
               Scalable modular ERP managing multi-warehouse supply chains, automated invoicing, and telemetry for 40,000+ daily operational transactions.
             </p>
             <div class="flex items-center gap-2 text-xs text-emerald-400 font-medium">
               <i class="fas fa-arrow-trend-up"></i> <span>3.4x Faster Operations Recorded</span>
             </div>
           </div>
-          <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Enterprise Logistics</span>
+          <div class="px-5 sm:px-6 py-3.5 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400">Enterprise Logistics</span>
             <button class="view-project-btn text-xs font-semibold text-sky-400 hover:underline flex items-center gap-1" data-id="1">
               <span>View Case Study</span> <i class="fas fa-arrow-right text-[10px]"></i>
             </button>
@@ -1026,21 +1054,21 @@
 
         <!-- Project 2 -->
         <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-700/60 transition-all flex flex-col justify-between" data-category="mobile">
-          <div class="p-6">
+          <div class="p-5 sm:p-6">
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">FinTech App</span>
-              <span class="text-xs text-slate-400 font-mono">Flutter • FastAPI • Redis</span>
+              <span class="text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">FinTech App</span>
+              <span class="text-[11px] text-slate-400 font-mono">Flutter • FastAPI</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">PayPulse FinTech Wallet</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">PayPulse FinTech Wallet</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
               High-frequency mobile payment gateway with biometric face/fingerprint authentication, peer-to-peer split checks, and sub-120ms latency.
             </p>
             <div class="flex items-center gap-2 text-xs text-emerald-400 font-medium">
-              <i class="fas fa-shield-check"></i> <span>PCI-DSS Level 1 Encryption</span>
+              <i class="fas fa-shield-check"></i> <span>PCI-DSS Compliant</span>
             </div>
           </div>
-          <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400">FinTech & Mobile</span>
+          <div class="px-5 sm:px-6 py-3.5 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400">FinTech & Mobile</span>
             <button class="view-project-btn text-xs font-semibold text-sky-400 hover:underline flex items-center gap-1" data-id="2">
               <span>View Case Study</span> <i class="fas fa-arrow-right text-[10px]"></i>
             </button>
@@ -1049,21 +1077,21 @@
 
         <!-- Project 3 -->
         <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-700/60 transition-all flex flex-col justify-between" data-category="billing">
-          <div class="p-6">
+          <div class="p-5 sm:p-6">
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-semibold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20">Billing POS</span>
-              <span class="text-xs text-slate-400 font-mono">Electron • SQLite • Node</span>
+              <span class="text-[11px] font-semibold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Billing POS</span>
+              <span class="text-[11px] text-slate-400 font-mono">Electron • SQLite</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">Q-Bill Pro Retail Edition</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Q-Bill Pro Retail Edition</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
               High-speed desktop and cloud billing software built for retail supermarkets, with barcode generation, thermal printing, and WhatsApp receipts.
             </p>
             <div class="flex items-center gap-2 text-xs text-emerald-400 font-medium">
               <i class="fas fa-bolt"></i> <span>0.2s Rapid Invoice Generation</span>
             </div>
           </div>
-          <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Supermarket Chains</span>
+          <div class="px-5 sm:px-6 py-3.5 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400">Supermarket Chains</span>
             <button class="view-project-btn text-xs font-semibold text-sky-400 hover:underline flex items-center gap-1" data-id="3">
               <span>View Case Study</span> <i class="fas fa-arrow-right text-[10px]"></i>
             </button>
@@ -1072,21 +1100,21 @@
 
         <!-- Project 4 -->
         <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-700/60 transition-all flex flex-col justify-between" data-category="web">
-          <div class="p-6">
+          <div class="p-5 sm:p-6">
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-semibold text-pink-400 bg-pink-500/10 px-2.5 py-1 rounded-md border border-pink-500/20">HealthTech</span>
-              <span class="text-xs text-slate-400 font-mono">Next.js 14 • WebRTC</span>
+              <span class="text-[11px] font-semibold text-pink-400 bg-pink-500/10 px-2 py-0.5 rounded border border-pink-500/20">HealthTech</span>
+              <span class="text-[11px] text-slate-400 font-mono">Next.js 14 • WebRTC</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">CareSync Telehealth Suite</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">CareSync Telehealth Suite</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
               HIPAA-compliant telemedicine consultation portal with live WebRTC video calling, electronic prescription generation, and appointment queues.
             </p>
             <div class="flex items-center gap-2 text-xs text-emerald-400 font-medium">
-              <i class="fas fa-heart-pulse"></i> <span>15,000+ Consultations Executed</span>
+              <i class="fas fa-heart-pulse"></i> <span>15,000+ Consultations</span>
             </div>
           </div>
-          <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Healthcare Network</span>
+          <div class="px-5 sm:px-6 py-3.5 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400">Healthcare Network</span>
             <button class="view-project-btn text-xs font-semibold text-sky-400 hover:underline flex items-center gap-1" data-id="4">
               <span>View Case Study</span> <i class="fas fa-arrow-right text-[10px]"></i>
             </button>
@@ -1095,21 +1123,21 @@
 
         <!-- Project 5 -->
         <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-700/60 transition-all flex flex-col justify-between" data-category="cloud">
-          <div class="p-6">
+          <div class="p-5 sm:p-6">
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-md border border-indigo-500/20">AI Analytics</span>
-              <span class="text-xs text-slate-400 font-mono">Python • Kafka • React</span>
+              <span class="text-[11px] font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">AI Analytics</span>
+              <span class="text-[11px] text-slate-400 font-mono">Python • Kafka</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">NexusVision AI Intelligence</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">NexusVision AI Intelligence</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
               Predictive customer analytics pipeline extracting business insights, customer churn indicators, and executive summaries from live data streams.
             </p>
             <div class="flex items-center gap-2 text-xs text-emerald-400 font-medium">
               <i class="fas fa-brain"></i> <span>88% Churn Forecast Accuracy</span>
             </div>
           </div>
-          <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Enterprise SaaS</span>
+          <div class="px-5 sm:px-6 py-3.5 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400">Enterprise SaaS</span>
             <button class="view-project-btn text-xs font-semibold text-sky-400 hover:underline flex items-center gap-1" data-id="5">
               <span>View Case Study</span> <i class="fas fa-arrow-right text-[10px]"></i>
             </button>
@@ -1118,21 +1146,21 @@
 
         <!-- Project 6 -->
         <div class="project-card glass-card rounded-2xl overflow-hidden border border-slate-700/60 transition-all flex flex-col justify-between" data-category="web">
-          <div class="p-6">
+          <div class="p-5 sm:p-6">
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-semibold text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-md border border-sky-500/20">E-Commerce</span>
-              <span class="text-xs text-slate-400 font-mono">Next.js • Node • Stripe</span>
+              <span class="text-[11px] font-semibold text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20">E-Commerce</span>
+              <span class="text-[11px] text-slate-400 font-mono">Next.js • Stripe</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-2">NovaBazaar Headless Market</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">NovaBazaar Headless Market</h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
               Ultra-fast headless commerce platform with 200+ vendor storefronts, localized currencies, and real-time warehouse inventory locks.
             </p>
             <div class="flex items-center gap-2 text-xs text-emerald-400 font-medium">
               <i class="fas fa-gauge-high"></i> <span>sub-500ms Page Speed</span>
             </div>
           </div>
-          <div class="px-6 py-4 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Retail Marketplace</span>
+          <div class="px-5 sm:px-6 py-3.5 bg-slate-900/60 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400">Retail Marketplace</span>
             <button class="view-project-btn text-xs font-semibold text-sky-400 hover:underline flex items-center gap-1" data-id="6">
               <span>View Case Study</span> <i class="fas fa-arrow-right text-[10px]"></i>
             </button>
@@ -1144,44 +1172,44 @@
     </div>
   </section>
 
-  <!-- Interactive Project Cost & Timeline Estimator (SRS FR-09) -->
-  <section id="estimator" class="py-20 bg-slate-900/40 border-y border-slate-800/80 px-4 sm:px-6 lg:px-8">
+  <!-- Interactive Project Cost & Timeline Estimator (320px Optimized) -->
+  <section id="estimator" class="py-14 sm:py-24 bg-slate-900/40 border-y border-slate-800/80 px-3 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Interactive Pricing Calculator</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+        <span class="text-sky-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">Interactive Pricing Calculator</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">
           Estimate Your Project <span class="gradient-text">Cost & Timeline</span>
         </h2>
-        <p class="text-slate-300 mt-4 text-base">
-          Configure your product requirements below to generate an instantaneous ballpark estimation. Transfer it straight to our founders in 1 click!
+        <p class="text-slate-300 mt-3 text-xs sm:text-sm">
+          Configure your requirements below to generate an instantaneous ballpark estimation.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
         
         <!-- Calculator Controls -->
-        <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 border border-slate-700/60 space-y-6">
+        <div class="lg:col-span-7 glass-card rounded-2xl p-5 sm:p-8 border border-slate-700/60 space-y-5">
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label for="calc-platform" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+              <label for="calc-platform" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                 1. Project Platform
               </label>
-              <select id="calc-platform" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
+              <select id="calc-platform" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
                 <option value="web">Web Application / Corporate Portal</option>
                 <option value="mobile">Mobile App (iOS & Android)</option>
                 <option value="billing">Billing & POS Software</option>
-                <option value="fullstack">Full-Stack SaaS / Multi-Tenant</option>
+                <option value="fullstack">Full-Stack SaaS Platform</option>
                 <option value="ai">AI & Machine Learning Solution</option>
               </select>
             </div>
 
             <div>
-              <label for="calc-scope" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+              <label for="calc-scope" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
                 2. Project Scope
               </label>
-              <select id="calc-scope" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
+              <select id="calc-scope" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
                 <option value="mvp">MVP / Rapid Prototype</option>
                 <option value="growth">Growth Stage / Market Ready</option>
                 <option value="enterprise">Full Enterprise-Scale</option>
@@ -1191,81 +1219,81 @@
 
           <!-- Feature Addons -->
           <div>
-            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3">
+            <label class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2.5">
               3. Select Core Technical Features
             </label>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
-              <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 text-xs text-slate-300">
+              <label class="flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
                 <input type="checkbox" class="calc-feature rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-700" data-cost="350" checked>
-                <span>User Authentication & Roles</span>
+                <span class="text-xs">User Authentication & Roles</span>
               </label>
-              <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+              <label class="flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
                 <input type="checkbox" class="calc-feature rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-700" data-cost="500" checked>
-                <span>Payment Gateway Integration</span>
+                <span class="text-xs">Payment Gateway Integration</span>
               </label>
-              <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+              <label class="flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
                 <input type="checkbox" class="calc-feature rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-700" data-cost="450" checked>
-                <span>Admin Analytics Dashboard</span>
+                <span class="text-xs">Admin Analytics Dashboard</span>
               </label>
-              <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+              <label class="flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
                 <input type="checkbox" class="calc-feature rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-700" data-cost="400">
-                <span>Real-Time Notifications / Chat</span>
+                <span class="text-xs">Real-Time Chat & Alerts</span>
               </label>
-              <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+              <label class="flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
                 <input type="checkbox" class="calc-feature rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-700" data-cost="600">
-                <span>Automated Invoicing & GST</span>
+                <span class="text-xs">Automated Invoicing & GST</span>
               </label>
-              <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
+              <label class="flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 cursor-pointer">
                 <input type="checkbox" class="calc-feature rounded text-sky-500 focus:ring-sky-500 bg-slate-800 border-slate-700" data-cost="800">
-                <span>Custom AI / LLM Integrations</span>
+                <span class="text-xs">Custom AI Integrations</span>
               </label>
             </div>
           </div>
 
           <!-- Speed -->
           <div>
-            <label for="calc-speed" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+            <label for="calc-speed" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
               4. Desired Delivery Speed
             </label>
-            <select id="calc-speed" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
+            <select id="calc-speed" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
               <option value="standard">Standard Sprint Schedule</option>
-              <option value="fast">Expedited / Dedicated Rapid Sprint (+25%)</option>
+              <option value="fast">Expedited Rapid Sprint (+25%)</option>
             </select>
           </div>
 
         </div>
 
         <!-- Real-Time Calculation Result Card -->
-        <div class="lg:col-span-5 glass-card rounded-2xl p-6 sm:p-8 border-2 border-sky-500/40 relative">
-          <div class="flex items-center gap-2 text-sky-400 text-xs font-bold tracking-wider uppercase mb-2">
+        <div class="lg:col-span-5 glass-card rounded-2xl p-5 sm:p-8 border-2 border-sky-500/40 relative">
+          <div class="flex items-center gap-2 text-sky-400 text-[11px] font-bold tracking-wider uppercase mb-2">
             <i class="fas fa-calculator"></i>
-            <span>Real-Time Instant Evaluation</span>
+            <span>Real-Time Evaluation</span>
           </div>
-          <h3 class="text-2xl font-bold text-white mb-6">Estimated Cost & Timeline</h3>
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-5">Estimated Cost & Timeline</h3>
 
-          <div class="space-y-6">
-            <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
-              <span class="text-xs text-slate-400 block mb-1">Estimated Investment Range:</span>
-              <div id="calc-price-display" class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">
+          <div class="space-y-4 sm:space-y-5">
+            <div class="p-4 sm:p-5 rounded-xl bg-slate-900/80 border border-slate-800">
+              <span class="text-[11px] text-slate-400 block mb-1">Estimated Investment Range:</span>
+              <div id="calc-price-display" class="text-2xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">
                 $2,100 - $2,650
               </div>
-              <span class="text-[11px] text-slate-400 mt-1 block">Transparent milestones • Zero hidden charges</span>
+              <span class="text-[10px] text-slate-400 mt-1 block">Transparent milestones • Zero hidden charges</span>
             </div>
 
-            <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
-              <span class="text-xs text-slate-400 block mb-1">Estimated Development Turnaround:</span>
-              <div id="calc-time-display" class="text-2xl sm:text-3xl font-bold text-white">
+            <div class="p-4 sm:p-5 rounded-xl bg-slate-900/80 border border-slate-800">
+              <span class="text-[11px] text-slate-400 block mb-1">Estimated Development Turnaround:</span>
+              <div id="calc-time-display" class="text-xl sm:text-3xl font-bold text-white">
                 4 - 6 Weeks
               </div>
-              <span class="text-[11px] text-slate-400 mt-1 block">Includes QA, security scans & staging rollout</span>
+              <span class="text-[10px] text-slate-400 mt-1 block">Includes QA, security scans & staging rollout</span>
             </div>
 
-            <button id="calc-apply-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-sm shadow-xl shadow-sky-500/20 transition-all flex items-center justify-center gap-2">
+            <button id="calc-apply-btn" class="w-full py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-xs sm:text-sm shadow-xl shadow-sky-500/20 transition-all flex items-center justify-center gap-2">
               <span>Apply to Inquiry Form Below</span>
-              <i class="fas fa-arrow-down"></i>
+              <i class="fas fa-arrow-down text-xs"></i>
             </button>
 
-            <p class="text-center text-[11px] text-slate-400">
+            <p class="text-center text-[10px] sm:text-[11px] text-slate-400">
               Need custom terms or enterprise retainer? Talk with our leadership team directly.
             </p>
           </div>
@@ -1277,151 +1305,73 @@
     </div>
   </section>
 
-  <!-- Client Testimonials & Social Proof -->
-  <section class="py-20 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">What Partners Say</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
-          Trusted by Innovative <span class="gradient-text">Founders & Companies</span>
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/60 flex flex-col justify-between">
-          <div>
-            <div class="flex text-amber-400 text-xs gap-1 mb-4">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="text-slate-300 text-sm italic leading-relaxed mb-6">
-              "Q COM Software Solutions built our retail billing system in under 4 weeks. Sachin and Sahil were exceptionally responsive and handled our GST compliance effortlessly. Highly recommended!"
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-            <div class="w-10 h-10 rounded-full bg-sky-500/20 border border-sky-500/30 flex items-center justify-center font-bold text-sky-400 text-sm">
-              AK
-            </div>
-            <div>
-              <div class="text-sm font-bold text-white">Anand K.</div>
-              <div class="text-xs text-slate-400">Director, Nexus Retail Corp</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/60 flex flex-col justify-between">
-          <div>
-            <div class="flex text-amber-400 text-xs gap-1 mb-4">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="text-slate-300 text-sm italic leading-relaxed mb-6">
-              "Roshani and her team executed our mobile telehealth application with precision. The code quality, animations, and documentation are top tier. They truly turn ideas into reality."
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-            <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/30 flex items-center justify-center font-bold text-pink-400 text-sm">
-              MS
-            </div>
-            <div>
-              <div class="text-sm font-bold text-white">Meera Sharma</div>
-              <div class="text-xs text-slate-400">Founder, CareSync Health</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="glass-card rounded-2xl p-7 border border-slate-700/60 flex flex-col justify-between">
-          <div>
-            <div class="flex text-amber-400 text-xs gap-1 mb-4">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-            </div>
-            <p class="text-slate-300 text-sm italic leading-relaxed mb-6">
-              "Deploying our Next.js web portal on Vercel took zero stress. Q COM's clean codebase and attention to performance helped us achieve a 99+ Lighthouse speed score on mobile."
-            </p>
-          </div>
-          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-            <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center font-bold text-emerald-400 text-sm">
-              VP
-            </div>
-            <div>
-              <div class="text-sm font-bold text-white">Vikram Patel</div>
-              <div class="text-xs text-slate-400">CTO, NovaBazaar Global</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
   <!-- FAQ Section (Frequently Asked Questions) -->
-  <section id="faq" class="py-20 bg-slate-900/40 border-y border-slate-800/80 px-4 sm:px-6 lg:px-8">
+  <section id="faq" class="py-14 sm:py-24 bg-slate-900/40 border-y border-slate-800/80 px-3 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       
-      <div class="text-center mb-14">
-        <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Answers & Guidance</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+      <div class="text-center mb-10 sm:mb-14">
+        <span class="text-sky-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">Answers & Guidance</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">
           Frequently Asked <span class="gradient-text">Questions</span>
         </h2>
-        <p class="text-slate-300 mt-3 text-sm">
+        <p class="text-slate-300 mt-2 text-xs sm:text-sm">
           Everything you need to know about working with Q COM Software Solutions.
         </p>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-3 sm:space-y-4">
         
         <!-- Q1 -->
         <div class="faq-item glass-card rounded-xl border border-slate-800 overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-4.5 text-left flex items-center justify-between text-base font-semibold text-white hover:text-sky-400 transition-colors">
+          <button class="faq-trigger w-full px-4 sm:px-6 py-3.5 sm:py-4.5 text-left flex items-center justify-between text-xs sm:text-base font-semibold text-white hover:text-sky-400 transition-colors">
             <span>What services does Q COM Software Solutions specialize in?</span>
-            <i class="faq-icon fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+            <i class="faq-icon fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300 ml-2"></i>
           </button>
-          <div class="faq-content accordion-content px-6 text-sm text-slate-300 pb-5 leading-relaxed">
+          <div class="faq-content accordion-content px-4 sm:px-6 text-xs sm:text-sm text-slate-300 pb-4 leading-relaxed">
             As detailed in our Software Requirements Specification (SRS), we specialize in Mobile Application Development (iOS & Android), Website & Full-Stack Development (Next.js, React, Node), Custom Enterprise Software, Billing Software Development (POS & GST Invoicing), UI/UX Design, E-Commerce Solutions, and 24/7 IT Consulting & Support.
           </div>
         </div>
 
         <!-- Q2 -->
         <div class="faq-item glass-card rounded-xl border border-slate-800 overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-4.5 text-left flex items-center justify-between text-base font-semibold text-white hover:text-sky-400 transition-colors">
+          <button class="faq-trigger w-full px-4 sm:px-6 py-3.5 sm:py-4.5 text-left flex items-center justify-between text-xs sm:text-base font-semibold text-white hover:text-sky-400 transition-colors">
             <span>How fast can our project be delivered and deployed?</span>
-            <i class="faq-icon fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+            <i class="faq-icon fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300 ml-2"></i>
           </button>
-          <div class="faq-content accordion-content px-6 text-sm text-slate-300 pb-5 leading-relaxed">
+          <div class="faq-content accordion-content px-4 sm:px-6 text-xs sm:text-sm text-slate-300 pb-4 leading-relaxed">
             Standard MVPs and websites are typically built within 2 to 4 weeks. High-throughput custom software and comprehensive billing platforms take between 4 to 8 weeks depending on custom integrations and scope. We also offer expedited sprint delivery schedules upon request.
           </div>
         </div>
 
         <!-- Q3 -->
         <div class="faq-item glass-card rounded-xl border border-slate-800 overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-4.5 text-left flex items-center justify-between text-base font-semibold text-white hover:text-sky-400 transition-colors">
+          <button class="faq-trigger w-full px-4 sm:px-6 py-3.5 sm:py-4.5 text-left flex items-center justify-between text-xs sm:text-base font-semibold text-white hover:text-sky-400 transition-colors">
             <span>Can this website and our future apps be deployed on Vercel or Netlify?</span>
-            <i class="faq-icon fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+            <i class="faq-icon fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300 ml-2"></i>
           </button>
-          <div class="faq-content accordion-content px-6 text-sm text-slate-300 pb-5 leading-relaxed">
+          <div class="faq-content accordion-content px-4 sm:px-6 text-xs sm:text-sm text-slate-300 pb-4 leading-relaxed">
             Yes! This website is engineered with zero-config deployment for Vercel and Netlify. It includes pre-configured <code class="text-sky-400">vercel.json</code> and <code class="text-sky-400">netlify.toml</code> files with optimized caching headers and asset compression so you can deploy immediately.
           </div>
         </div>
 
         <!-- Q4 -->
         <div class="faq-item glass-card rounded-xl border border-slate-800 overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-4.5 text-left flex items-center justify-between text-base font-semibold text-white hover:text-sky-400 transition-colors">
+          <button class="faq-trigger w-full px-4 sm:px-6 py-3.5 sm:py-4.5 text-left flex items-center justify-between text-xs sm:text-base font-semibold text-white hover:text-sky-400 transition-colors">
             <span>Do we retain 100% intellectual property (IP) and source code ownership?</span>
-            <i class="faq-icon fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+            <i class="faq-icon fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300 ml-2"></i>
           </button>
-          <div class="faq-content accordion-content px-6 text-sm text-slate-300 pb-5 leading-relaxed">
+          <div class="faq-content accordion-content px-4 sm:px-6 text-xs sm:text-sm text-slate-300 pb-4 leading-relaxed">
             Absolutely. Upon project completion and final milestone handover, you receive 100% full intellectual property rights, unrestricted code repository access on GitHub/GitLab, and comprehensive technical documentation.
           </div>
         </div>
 
         <!-- Q5 -->
         <div class="faq-item glass-card rounded-xl border border-slate-800 overflow-hidden">
-          <button class="faq-trigger w-full px-6 py-4.5 text-left flex items-center justify-between text-base font-semibold text-white hover:text-sky-400 transition-colors">
+          <button class="faq-trigger w-full px-4 sm:px-6 py-3.5 sm:py-4.5 text-left flex items-center justify-between text-xs sm:text-base font-semibold text-white hover:text-sky-400 transition-colors">
             <span>How do we contact the founders directly for quick requirements?</span>
-            <i class="faq-icon fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300"></i>
+            <i class="faq-icon fas fa-chevron-down text-xs text-slate-400 transition-transform duration-300 ml-2"></i>
           </button>
-          <div class="faq-content accordion-content px-6 text-sm text-slate-300 pb-5 leading-relaxed">
+          <div class="faq-content accordion-content px-4 sm:px-6 text-xs sm:text-sm text-slate-300 pb-4 leading-relaxed">
             You can reach our designated company email directly at <a href="mailto:qcomsoft@gmail.com" class="text-sky-400 font-semibold underline">qcomsoft@gmail.com</a>, message on WhatsApp, or send a DM to our official Instagram page <a href="https://instagram.com/qcomsoftware" target="_blank" class="text-pink-400 font-semibold underline">@qcomsoftware</a>.
           </div>
         </div>
@@ -1432,83 +1382,83 @@
   </section>
 
   <!-- Contact Us Section (Strictly matching SRS Section 3, FR-02, FR-03, FR-04) -->
-  <section id="contact" class="py-20 md:py-28 px-4 sm:px-6 lg:px-8 relative">
+  <section id="contact" class="py-14 sm:py-24 px-3 sm:px-6 lg:px-8 relative">
     <div class="max-w-7xl mx-auto">
       
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-sky-400 text-sm font-semibold tracking-wider uppercase">Let's Build Something Great</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+        <span class="text-sky-400 text-xs sm:text-sm font-semibold tracking-wider uppercase">Let's Build Something Great</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">
           Start Your Project With <span class="gradient-text">Q COM Software Solutions</span>
         </h2>
-        <p class="text-slate-300 mt-4 text-base">
+        <p class="text-slate-300 mt-3 text-xs sm:text-sm">
           Send your project brief directly to <strong>qcomsoft@gmail.com</strong> or fill out the inquiry form below for a rapid response within 2 hours.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-12 items-start">
         
         <!-- Contact Information Cards -->
-        <div class="lg:col-span-5 space-y-6">
+        <div class="lg:col-span-5 space-y-4 sm:space-y-5">
           
           <!-- Designated Email Card -->
-          <div class="glass-card rounded-2xl p-6 border border-slate-700/60 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-xl flex-shrink-0">
+          <div class="glass-card rounded-2xl p-4 sm:p-6 border border-slate-700/60 flex items-start gap-3 sm:gap-4">
+            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 text-lg sm:text-xl flex-shrink-0">
               <i class="fas fa-envelope"></i>
             </div>
             <div>
-              <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Official Company Email</span>
-              <a href="mailto:qcomsoft@gmail.com" class="text-base font-bold text-white hover:text-sky-400 transition-colors block mt-1">
+              <span class="text-[10px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider">Official Company Email</span>
+              <a href="mailto:qcomsoft@gmail.com" class="text-sm sm:text-base font-bold text-white hover:text-sky-400 transition-colors block mt-0.5">
                 qcomsoft@gmail.com
               </a>
-              <p class="text-xs text-slate-400 mt-1">Monitored directly by company leadership</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">Monitored directly by company leadership</p>
             </div>
           </div>
 
           <!-- Instagram Card -->
-          <div class="glass-card rounded-2xl p-6 border border-slate-700/60 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-xl flex-shrink-0">
+          <div class="glass-card rounded-2xl p-4 sm:p-6 border border-slate-700/60 flex items-start gap-3 sm:gap-4">
+            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-lg sm:text-xl flex-shrink-0">
               <i class="fab fa-instagram"></i>
             </div>
             <div>
-              <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Official Instagram</span>
-              <a href="https://instagram.com/qcomsoftware" target="_blank" rel="noopener noreferrer" class="text-base font-bold text-white hover:text-pink-400 transition-colors block mt-1">
+              <span class="text-[10px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider">Official Instagram</span>
+              <a href="https://instagram.com/qcomsoftware" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base font-bold text-white hover:text-pink-400 transition-colors block mt-0.5">
                 @qcomsoftware
               </a>
-              <p class="text-xs text-slate-400 mt-1">DM us directly for business enquiries</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">DM us directly for business enquiries</p>
             </div>
           </div>
 
-          <!-- WhatsApp Direct Integration (SRS FR-04) -->
-          <div class="glass-card rounded-2xl p-6 border border-slate-700/60 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl flex-shrink-0">
+          <!-- WhatsApp Direct Integration -->
+          <div class="glass-card rounded-2xl p-4 sm:p-6 border border-slate-700/60 flex items-start gap-3 sm:gap-4">
+            <div class="w-10 sm:w-12 h-10 sm:h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-lg sm:text-xl flex-shrink-0">
               <i class="fab fa-whatsapp"></i>
             </div>
             <div>
-              <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Direct WhatsApp Chat</span>
-              <a href="https://wa.me/?text=Hello%20Q%20COM%20Software%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project%20enquiry." target="_blank" rel="noopener noreferrer" class="text-base font-bold text-emerald-400 hover:text-emerald-300 transition-colors block mt-1">
-                Initiate WhatsApp Chat <i class="fas fa-external-link text-xs ml-1"></i>
+              <span class="text-[10px] sm:text-xs text-slate-400 font-semibold uppercase tracking-wider">Direct WhatsApp Chat</span>
+              <a href="https://wa.me/?text=Hello%20Q%20COM%20Software%20Solutions%2C%20I%20would%20like%20to%20discuss%20a%20project%20enquiry." target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base font-bold text-emerald-400 hover:text-emerald-300 transition-colors block mt-0.5">
+                Initiate WhatsApp Chat <i class="fas fa-external-link text-[10px] ml-1"></i>
               </a>
-              <p class="text-xs text-slate-400 mt-1">Instant messaging & live consultation</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">Instant messaging & live consultation</p>
             </div>
           </div>
 
           <!-- Leadership Direct Reach -->
-          <div class="glass-card rounded-2xl p-6 border border-slate-700/60">
-            <h4 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
+          <div class="glass-card rounded-2xl p-4 sm:p-6 border border-slate-700/60">
+            <h4 class="text-xs sm:text-sm font-bold text-white mb-2.5 flex items-center gap-2">
               <i class="fas fa-user-shield text-sky-400"></i> Executive Contacts
             </h4>
             <div class="space-y-2 text-xs text-slate-300">
               <div class="flex justify-between items-center py-1 border-b border-slate-800">
                 <span><strong>Sachin Rathore</strong> (Founder)</span>
-                <span class="text-slate-400">Strategic Partnerships</span>
+                <span class="text-slate-400 text-[11px]">Strategy</span>
               </div>
               <div class="flex justify-between items-center py-1 border-b border-slate-800">
                 <span><strong>Roshani</strong> (CEO)</span>
-                <span class="text-slate-400">Operations & Clients</span>
+                <span class="text-slate-400 text-[11px]">Operations</span>
               </div>
               <div class="flex justify-between items-center py-1">
                 <span><strong>Sahil Pathan</strong> (Partner)</span>
-                <span class="text-slate-400">Engineering & Delivery</span>
+                <span class="text-slate-400 text-[11px]">Technology</span>
               </div>
             </div>
           </div>
@@ -1516,38 +1466,38 @@
         </div>
 
         <!-- Validated Contact Enquiry Form (SRS FR-02 & FR-03) -->
-        <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 border border-slate-700/60">
-          <form id="contact-form" class="space-y-5">
+        <div class="lg:col-span-7 glass-card rounded-2xl p-5 sm:p-8 border border-slate-700/60">
+          <form id="contact-form" class="space-y-4">
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label for="contact-name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                <label for="contact-name" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
                   Your Full Name *
                 </label>
-                <input type="text" id="contact-name" required placeholder="e.g. Alex Morgan" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors">
+                <input type="text" id="contact-name" required placeholder="e.g. Alex Morgan" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors">
               </div>
 
               <div>
-                <label for="contact-email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                <label for="contact-email" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
                   Your Email Address *
                 </label>
-                <input type="email" id="contact-email" required placeholder="alex@company.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors">
+                <input type="email" id="contact-email" required placeholder="alex@company.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors">
               </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label for="contact-phone" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                  Phone / WhatsApp Number
+                <label for="contact-phone" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                  Phone / WhatsApp
                 </label>
-                <input type="tel" id="contact-phone" placeholder="+1 (555) 000-0000" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors">
+                <input type="tel" id="contact-phone" placeholder="+1 (555) 000-0000" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors">
               </div>
 
               <div>
-                <label for="contact-service" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                <label for="contact-service" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
                   Service Required
                 </label>
-                <select id="contact-service" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
+                <select id="contact-service" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
                   <option value="Billing Software Development">Billing Software Development (POS/GST)</option>
                   <option value="Mobile Application Development">Mobile Application Development (iOS/Android)</option>
                   <option value="Website Development">Website Development (Next.js/React)</option>
@@ -1560,30 +1510,30 @@
             </div>
 
             <div>
-              <label for="contact-budget" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+              <label for="contact-budget" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
                 Estimated Project Budget
               </label>
-              <select id="contact-budget" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
+              <select id="contact-budget" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-sky-500 transition-colors">
                 <option value="$1,000 - $3,000">$1,000 - $3,000 (Standard MVP / Invoicing)</option>
-                <option value="$3,000 - $8,000">$3,000 - $8,000 (Full-Scale Web & Mobile App)</option>
+                <option value="$3,000 - $8,000">$3,000 - $8,000 (Full Web & Mobile App)</option>
                 <option value="$8,000 - $20,000+">$8,000 - $20,000+ (Enterprise Cloud & Custom ERP)</option>
                 <option value="Flexible / Needs Consultation">Flexible / Let's Discuss Specifications</option>
               </select>
             </div>
 
             <div>
-              <label for="contact-message" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+              <label for="contact-message" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
                 Project Description & Requirements *
               </label>
-              <textarea id="contact-message" rows="5" required placeholder="Describe your software objectives, desired target audience, timeline, or reference products..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors"></textarea>
+              <textarea id="contact-message" rows="4" required placeholder="Describe your software objectives, desired target audience, timeline, or reference products..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 sm:p-4 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 transition-colors"></textarea>
             </div>
 
-            <button type="submit" class="btn-shimmer w-full py-4 rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-semibold text-base shadow-xl shadow-sky-500/25 transition-all flex items-center justify-center gap-2">
+            <button type="submit" class="btn-shimmer w-full py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-semibold text-xs sm:text-sm shadow-xl shadow-sky-500/25 transition-all flex items-center justify-center gap-2">
               <span>Submit Project Inquiry</span>
-              <i class="fas fa-paper-plane text-sm"></i>
+              <i class="fas fa-paper-plane text-xs"></i>
             </button>
 
-            <p class="text-center text-xs text-slate-400">
+            <p class="text-center text-[10px] sm:text-xs text-slate-400">
               Inquiries are routed directly to <strong>qcomsoft@gmail.com</strong> under strict NDA confidentiality.
             </p>
 
@@ -1595,26 +1545,26 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+  <!-- Footer (Strictly Responsive & Organized) -->
+  <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-10 sm:py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
         
         <!-- Brand Info -->
-        <div class="lg:col-span-2 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="h-10 px-2 py-1 bg-white rounded-lg flex items-center">
-              <img src="assets/images/logo-cropped.png" alt="Q COM Software Solutions" class="h-8 object-contain">
+        <div class="sm:col-span-2 space-y-3">
+          <div class="flex items-center gap-2.5">
+            <div class="h-8 sm:h-9 px-2 py-0.5 bg-white rounded-lg flex items-center">
+              <img src="assets/images/logo-cropped.png" alt="Q COM Software Solutions" class="h-6 sm:h-7 object-contain">
             </div>
             <div>
-              <span class="font-bold text-white text-base">Q COM</span>
-              <span class="text-xs block text-sky-400 font-medium">Software Solutions</span>
+              <span class="font-bold text-white text-sm sm:text-base">Q COM</span>
+              <span class="text-[10px] sm:text-xs block text-sky-400 font-medium">Software Solutions</span>
             </div>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
             Smart Technology | Software Development & IT Solutions. Turning Ideas Into Reality with world-class engineering, custom billing platforms, and mobile apps.
           </p>
-          <div class="text-xs text-slate-300 space-y-1">
+          <div class="text-xs text-slate-300 space-y-1 pt-1">
             <p><i class="fas fa-envelope text-sky-400 mr-2"></i> <a href="mailto:qcomsoft@gmail.com" class="hover:text-white">qcomsoft@gmail.com</a></p>
             <p><i class="fab fa-instagram text-pink-400 mr-2"></i> <a href="https://instagram.com/qcomsoftware" target="_blank" class="hover:text-white">@qcomsoftware</a></p>
           </div>
@@ -1622,8 +1572,8 @@
 
         <!-- Quick Links -->
         <div>
-          <h4 class="text-white font-semibold text-sm mb-4">Quick Navigation</h4>
-          <ul class="space-y-2 text-xs">
+          <h4 class="text-white font-semibold text-xs sm:text-sm mb-3">Quick Navigation</h4>
+          <ul class="space-y-1.5 text-xs">
             <li><a href="#home" class="hover:text-sky-400 transition-colors">Home</a></li>
             <li><a href="#about" class="hover:text-sky-400 transition-colors">About Us</a></li>
             <li><a href="#leadership" class="hover:text-sky-400 transition-colors">Leadership Team</a></li>
@@ -1635,8 +1585,8 @@
 
         <!-- Services -->
         <div>
-          <h4 class="text-white font-semibold text-sm mb-4">Our Services</h4>
-          <ul class="space-y-2 text-xs">
+          <h4 class="text-white font-semibold text-xs sm:text-sm mb-3">Our Services</h4>
+          <ul class="space-y-1.5 text-xs">
             <li><a href="#services" class="hover:text-sky-400 transition-colors">Mobile App Development</a></li>
             <li><a href="#services" class="hover:text-sky-400 transition-colors">Website Development</a></li>
             <li><a href="#services" class="hover:text-sky-400 transition-colors">Custom Software</a></li>
@@ -1648,8 +1598,8 @@
 
         <!-- Newsletter Subscription -->
         <div>
-          <h4 class="text-white font-semibold text-sm mb-4">Stay Connected</h4>
-          <p class="text-xs text-slate-400 mb-3">Subscribe for monthly tech insights, product updates, and software engineering advice.</p>
+          <h4 class="text-white font-semibold text-xs sm:text-sm mb-3">Stay Connected</h4>
+          <p class="text-[11px] sm:text-xs text-slate-400 mb-2.5">Subscribe for updates and tech insights.</p>
           <form id="newsletter-form" class="space-y-2">
             <input type="email" required placeholder="Enter your email" class="w-full bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500">
             <button type="submit" class="w-full py-2 bg-sky-500 hover:bg-sky-400 text-white rounded-lg text-xs font-semibold transition-colors">
@@ -1660,42 +1610,42 @@
 
       </div>
 
-      <!-- Copyright & Bottom Line -->
-      <div class="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-        <p>© 2026 Q COM Software Solutions. All Rights Reserved. Built strictly to SRS Specifications.</p>
-        <div class="flex items-center gap-4">
+      <!-- Copyright -->
+      <div class="mt-8 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-[11px] sm:text-xs text-slate-400">
+        <p>© 2026 Q COM Software Solutions. All Rights Reserved.</p>
+        <div class="flex items-center gap-3">
           <span>Leadership: Sachin Rathore • Roshani • Sahil Pathan</span>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Modal: Case Study Quick View -->
-  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
-    <div id="project-modal-backdrop" class="fixed inset-0 bg-black/75 backdrop-blur-sm"></div>
-    <div class="relative glass-card bg-slate-900 border border-slate-700/80 rounded-2xl max-w-2xl w-full p-6 sm:p-8 z-10 max-h-[90vh] overflow-y-auto">
-      <button id="project-modal-close" class="absolute top-5 right-5 p-2 text-slate-400 hover:text-white transition-colors">
-        <i class="fas fa-times text-lg"></i>
+  <!-- Modal: Case Study Quick View (Mobile Friendly) -->
+  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 hidden">
+    <div id="project-modal-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="relative glass-card bg-slate-900 border border-slate-700/80 rounded-2xl w-[94vw] max-w-2xl p-5 sm:p-8 z-10 max-h-[90vh] overflow-y-auto">
+      <button id="project-modal-close" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-white transition-colors">
+        <i class="fas fa-times text-base"></i>
       </button>
 
-      <span id="modal-category" class="text-xs font-semibold text-sky-400 uppercase tracking-wider">Category</span>
-      <h3 id="modal-title" class="text-2xl font-bold text-white mt-1 mb-2">Project Title</h3>
-      <p id="modal-tagline" class="text-sm font-medium text-slate-300 mb-4"></p>
+      <span id="modal-category" class="text-[10px] sm:text-xs font-semibold text-sky-400 uppercase tracking-wider">Category</span>
+      <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-white mt-1 mb-2">Project Title</h3>
+      <p id="modal-tagline" class="text-xs sm:text-sm font-medium text-slate-300 mb-3"></p>
       
-      <p id="modal-desc" class="text-sm text-slate-300 leading-relaxed mb-6"></p>
+      <p id="modal-desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4"></p>
 
-      <div class="mb-6">
-        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Technology Stack</h4>
-        <div id="modal-stack" class="flex flex-wrap gap-2"></div>
+      <div class="mb-4">
+        <h4 class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Technology Stack</h4>
+        <div id="modal-stack" class="flex flex-wrap gap-1.5"></div>
       </div>
 
-      <div class="mb-6 p-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
-        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Verified Performance Metrics</h4>
-        <div id="modal-metrics" class="space-y-1.5"></div>
+      <div class="mb-4 p-3 sm:p-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
+        <h4 class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Verified Metrics</h4>
+        <div id="modal-metrics" class="space-y-1"></div>
       </div>
 
-      <div class="pt-4 border-t border-slate-800 flex justify-end gap-3">
-        <a href="#contact" onclick="document.getElementById('project-modal').classList.add('hidden'); document.body.style.overflow='';" class="px-5 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-white font-semibold text-xs transition-colors">
+      <div class="pt-3 border-t border-slate-800 flex justify-end">
+        <a href="#contact" onclick="document.getElementById('project-modal').classList.add('hidden'); document.body.style.overflow='';" class="w-full sm:w-auto text-center px-4 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-white font-semibold text-xs transition-colors">
           Inquire Similar Solution
         </a>
       </div>
@@ -1703,48 +1653,45 @@
   </div>
 
   <!-- Modal: Contact Success & Dispatch Options -->
-  <div id="form-success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
-    <div class="fixed inset-0 bg-black/75 backdrop-blur-sm"></div>
-    <div class="relative glass-card bg-slate-900 border border-slate-700/80 rounded-2xl max-w-md w-full p-6 sm:p-8 z-10 text-center">
-      <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 text-2xl flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
+  <div id="form-success-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 hidden">
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+    <div class="relative glass-card bg-slate-900 border border-slate-700/80 rounded-2xl w-[94vw] max-w-md p-5 sm:p-8 z-10 text-center">
+      <div class="w-12 sm:w-16 h-12 sm:h-16 rounded-full bg-emerald-500/20 text-emerald-400 text-xl sm:text-2xl flex items-center justify-center mx-auto mb-3 border border-emerald-500/30">
         <i class="fas fa-check"></i>
       </div>
-      <h3 class="text-xl font-bold text-white mb-2">Inquiry Form Recorded!</h3>
-      <p class="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
-        Thank you for contacting Q COM Software Solutions. To guarantee zero delivery delays, click below to send directly via Gmail or WhatsApp right now:
+      <h3 class="text-lg sm:text-xl font-bold text-white mb-1.5">Inquiry Recorded!</h3>
+      <p class="text-xs sm:text-sm text-slate-300 mb-5 leading-relaxed">
+        Thank you for contacting Q COM Software Solutions. Send directly via Gmail or WhatsApp right now:
       </p>
 
-      <div class="space-y-3">
-        <a id="form-mailto-btn" href="#" class="w-full py-3 px-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2">
+      <div class="space-y-2.5">
+        <a id="form-mailto-btn" href="#" class="w-full py-2.5 sm:py-3 px-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2">
           <i class="fas fa-envelope"></i>
-          <span>Send Directly to qcomsoft@gmail.com</span>
+          <span>Send to qcomsoft@gmail.com</span>
         </a>
-        <a id="form-whatsapp-btn" href="#" target="_blank" class="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2">
+        <a id="form-whatsapp-btn" href="#" target="_blank" class="w-full py-2.5 sm:py-3 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2">
           <i class="fab fa-whatsapp"></i>
           <span>Instant WhatsApp Connect</span>
         </a>
-        <button id="form-success-close" class="w-full py-2.5 text-xs text-slate-400 hover:text-white transition-colors">
+        <button id="form-success-close" class="w-full py-2 text-xs text-slate-400 hover:text-white transition-colors">
           Close Window
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Floating WhatsApp Action Button (SRS FR-04) -->
-  <a href="https://wa.me/?text=Hello%20Q%20COM%20Software%20Solutions%2C%20I%20would%20like%20to%20inquire%20about%20software%20development%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center text-2xl shadow-2xl shadow-emerald-500/40 hover:scale-110 transition-all duration-300 group">
+  <!-- Floating WhatsApp Action Button (Sized nicely for mobile) -->
+  <a href="https://wa.me/?text=Hello%20Q%20COM%20Software%20Solutions%2C%20I%20would%20like%20to%20inquire%20about%20software%20development%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-5 right-4 sm:right-6 z-40 w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center text-xl sm:text-2xl shadow-2xl shadow-emerald-500/40 hover:scale-105 active:scale-95 transition-all duration-300">
     <i class="fab fa-whatsapp"></i>
-    <span class="absolute right-16 px-3 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-slate-700 shadow-xl pointer-events-none">
-      Chat with Q COM
-    </span>
   </a>
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" aria-label="Back to Top" class="fixed bottom-24 right-6 z-40 w-11 h-11 rounded-full bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center text-sm shadow-xl border border-slate-700 opacity-0 pointer-events-none transition-all duration-300">
+  <button id="back-to-top" aria-label="Back to Top" class="fixed bottom-20 right-4 sm:right-6 z-40 w-10 sm:w-11 h-10 sm:h-11 rounded-full bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center text-xs sm:text-sm shadow-xl border border-slate-700 opacity-0 pointer-events-none transition-all duration-300 active:scale-95">
     <i class="fas fa-arrow-up"></i>
   </button>
 
   <!-- Toast Notification Container -->
-  <div id="toast" class="fixed bottom-6 left-6 z-50 px-5 py-3.5 rounded-xl bg-slate-900/95 text-white text-xs font-semibold border border-sky-500/40 shadow-2xl flex items-center gap-3">
+  <div id="toast" class="fixed bottom-5 left-3 sm:left-6 z-50 max-w-[90vw] px-4 py-3 rounded-xl bg-slate-900/98 text-white text-xs font-semibold border border-sky-500/40 shadow-2xl flex items-center gap-2.5">
     <i class="fas fa-circle-info text-sky-400 text-sm"></i>
     <span id="toast-message">Notification message</span>
   </div>
